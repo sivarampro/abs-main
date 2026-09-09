@@ -1,0 +1,159 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-abs-navy: #0B1528;
+    --color-abs-gold: #D97706;
+    --color-abs-gold-light: #F59E0B;
+    --color-abs-red: #9B2C2C;
+    --color-abs-blue: #0284C7;
+    --color-abs-green: #16A34A;
+    --color-abs-orange: #EA580C;
+    --color-abs-surface: #F8FAFC;
+    --color-abs-border: #E2E8F0;
+  }
+
+  body {
+    @apply bg-white text-slate-800 antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  /* Accessible focus indicators */
+  :focus-visible {
+    @apply outline-none ring-2 ring-amber-500 ring-offset-2;
+  }
+}
+
+@layer components {
+  /* Architectural Badges */
+  .abs-pill-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold tracking-wider uppercase rounded-full border border-amber-200/80 bg-amber-50 text-amber-900;
+  }
+  
+  .abs-navy-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold tracking-wider uppercase rounded-full border border-slate-700 bg-slate-900 text-slate-100;
+  }
+
+  /* Premium Buttons */
+  .abs-btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold tracking-wide text-white bg-slate-900 rounded-lg shadow-sm hover:bg-slate-800 active:scale-[0.98] transition-all duration-200 focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2;
+  }
+
+  .abs-btn-gold {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold tracking-wide text-slate-950 bg-amber-400 rounded-lg shadow-sm hover:bg-amber-300 active:scale-[0.98] transition-all duration-200 focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2;
+  }
+
+  .abs-btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold tracking-wide text-slate-800 bg-white border border-slate-200 rounded-lg shadow-sm hover:bg-slate-50 hover:border-slate-300 active:scale-[0.98] transition-all duration-200 focus-visible:ring-2 focus-visible:ring-slate-400 focus-visible:ring-offset-2;
+  }
+
+  .abs-btn-outline-gold {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold tracking-wide text-amber-700 bg-amber-50/50 border border-amber-300 rounded-lg shadow-sm hover:bg-amber-100/70 active:scale-[0.98] transition-all duration-200;
+  }
+
+  /* Glassmorphism & Cards */
+  .abs-card {
+    @apply bg-white border border-slate-100 rounded-2xl shadow-card hover:shadow-card-hover transition-all duration-300;
+  }
+
+  .abs-glass {
+    @apply bg-white/80 backdrop-blur-md border border-white/60 shadow-subtle;
+  }
+
+  .abs-container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .abs-section-heading {
+    @apply font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900;
+  }
+
+  .abs-editorial-subheading {
+    @apply text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Moving Ticker Marquee */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Floating Photo Cards Animations */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0px) rotate(var(--photo-rot, 0deg));
+  }
+  50% {
+    transform: translateY(-12px) rotate(var(--photo-rot, 0deg));
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(var(--photo-rot, 0deg));
+  }
+  50% {
+    transform: translateY(12px) rotate(var(--photo-rot, 0deg));
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 7s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 8s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float-slow 7.5s ease-in-out 2s infinite;
+}
+
