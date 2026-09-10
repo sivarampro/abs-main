@@ -4,6 +4,12 @@ import { PageHeader } from '../../components/layout/PageHeader';
 import { InteractiveCampusMap } from '../../components/campus/InteractiveCampusMap';
 import { campusStats } from '../../data/campus';
 import { Sun, ArrowRight, Calendar } from 'lucide-react';
+import { LearningSpaces } from './LearningSpaces';
+import { ArtsCreativity } from './ArtsCreativity';
+import { SportsRecreation } from './SportsRecreation';
+import { StudentLifeSpaces } from './StudentLifeSpaces';
+import { WellbeingSafety } from './WellbeingSafety';
+import { TechnologyInnovation } from './TechnologyInnovation';
 
 export const CampusOverview: React.FC = () => {
   return (
@@ -24,6 +30,32 @@ export const CampusOverview: React.FC = () => {
           </Link>
         }
       />
+
+      {/* Sticky Table of Contents Navigation */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 sm:-mt-14 relative z-10">
+        <div className="bg-white/95 backdrop-blur-md rounded-2xl border border-slate-200 shadow-md p-2 sm:p-3">
+          <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar scroll-smooth">
+            {[
+              { id: 'learning-spaces', number: '01', title: 'Learning & Academic Spaces' },
+              { id: 'arts-creativity', number: '02', title: 'Arts & Creativity' },
+              { id: 'sports-recreation', number: '03', title: 'Sports & Recreation' },
+              { id: 'student-life-wellbeing', number: '04', title: 'Student Life & Wellbeing' },
+              { id: 'technology-innovation', number: '05', title: 'Tech & Innovation' },
+            ].map((sec) => (
+              <Link
+                key={sec.id}
+                to={`/campus#${sec.id}`}
+                className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-slate-50 hover:bg-amber-50 hover:text-amber-900 text-slate-700 transition-all border border-slate-200/80 hover:border-amber-300 flex-shrink-0"
+              >
+                <span className="w-5 h-5 rounded-full bg-amber-400/20 text-amber-800 text-[10px] font-bold flex items-center justify-center">
+                  {sec.number}
+                </span>
+                <span>{sec.title}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* 1. Campus Stats Row */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,7 +98,6 @@ export const CampusOverview: React.FC = () => {
           
           <div className="lg:col-span-6 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-emerald-900 text-xs font-bold uppercase tracking-wider">
-              <Sun className="w-3.5 h-3.5 text-emerald-600" />
               <span>Eco-Architecture</span>
             </div>
 
@@ -125,7 +156,7 @@ export const CampusOverview: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             {
-              title: 'Learning Spaces',
+              title: 'Learning & Academic Spaces',
               href: '/campus/learning-spaces',
               desc: 'Smart classrooms, 45,000+ volume Central Library, and collegiate wet discovery laboratories.',
               image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=800&q=80',
@@ -146,18 +177,11 @@ export const CampusOverview: React.FC = () => {
               tag: 'Athletics Arena'
             },
             {
-              title: 'Student Life & Common Spaces',
-              href: '/campus/student-life-spaces',
-              desc: '600-seat Dining Hall, House common rooms, outdoor stone amphitheatre, and botanical trails.',
+              title: 'Student Life & Wellbeing',
+              href: '/campus/student-life-wellbeing',
+              desc: '600-seat Dining Hall, House common rooms, pastoral counseling suites, and sensory gardens.',
               image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80',
-              tag: 'Dining & Lounges'
-            },
-            {
-              title: 'Wellbeing & Safety',
-              href: '/campus/wellbeing-safety',
-              desc: '24/7 medical infirmary, pastoral counseling suites, sensory gardens, and smart RFID security.',
-              image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80',
-              tag: 'Pastoral & Infirmary'
+              tag: 'Community & Pastoral'
             },
             {
               title: 'Technology & Innovation',
@@ -169,7 +193,7 @@ export const CampusOverview: React.FC = () => {
           ].map((domain, i) => (
             <Link
               key={i}
-              to={domain.href}
+              to={`/campus#${domain.href.split('/').pop()}`}
               className="group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-card hover:shadow-card-hover transition-all flex flex-col justify-between"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
@@ -203,6 +227,14 @@ export const CampusOverview: React.FC = () => {
           ))}
         </div>
       </section>
+
+      {/* Render Subsections */}
+      <LearningSpaces />
+      <ArtsCreativity />
+      <SportsRecreation />
+      <StudentLifeSpaces />
+      <WellbeingSafety />
+      <TechnologyInnovation />
 
     </div>
   );

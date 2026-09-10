@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Mail, Phone, MapPin, ArrowRight, ShieldCheck, Award, Globe, Heart } from 'lucide-react';
 import { useToast } from '../common/ToastContext';
+import walkingStudents from '../../assets/images/about/students_holding_hands_jumping.png';
 
 export const Footer: React.FC = () => {
   const [newsletterEmail, setNewsletterEmail] = useState('');
@@ -23,10 +24,22 @@ export const Footer: React.FC = () => {
   };
 
   return (
-    <footer className="relative bg-slate-950 text-slate-300 pt-16 pb-12 overflow-hidden" aria-label="School Footer">
+    <footer className="relative bg-slate-950 text-slate-300 pt-16 pb-12 mt-12 sm:mt-24" aria-label="School Footer">
+      
+      {/* Walking Students Animation */}
+      <div className="absolute left-0 bottom-full w-full h-16 sm:h-24 pointer-events-none z-20">
+        <div className="absolute bottom-0 h-full w-full animate-walk-across">
+          <img 
+            src={walkingStudents} 
+            alt="" 
+            className="h-full w-auto animate-walking-bounce transform origin-bottom drop-shadow-md" 
+          />
+        </div>
+      </div>
+
       {/* Rainbow gradient top border */}
       <div 
-        className="absolute top-0 left-0 w-full h-1.5"
+        className="absolute top-0 left-0 w-full h-1.5 z-10"
         style={{ background: 'linear-gradient(to right, #1d4ed8, #7e22ce, #e11d48, #ea580c, #eab308, #84cc16, #22c55e)' }}
       ></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -96,7 +109,7 @@ export const Footer: React.FC = () => {
             <h4 className="text-xs font-bold uppercase tracking-widest text-white">Admissions & Info</h4>
             <ul className="space-y-2 text-xs text-slate-400">
               <li><Link to="/admissions" className="hover:text-amber-400 transition-colors">Admissions Process</Link></li>
-              <li><Link to="/apply" className="hover:text-amber-400 transition-colors font-medium text-amber-300">Apply Online</Link></li>
+              <li><Link to="/admissions" className="hover:text-amber-400 transition-colors font-medium text-amber-300">Admission Online</Link></li>
               <li><Link to="/contact" className="hover:text-amber-400 transition-colors">Contact Us</Link></li>
               <li><Link to="/careers" className="hover:text-amber-400 transition-colors">Careers</Link></li>
             </ul>

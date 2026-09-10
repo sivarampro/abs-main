@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { PageHeader } from '../../components/layout/PageHeader';
 import { Cpu, Bot, Sparkles, Terminal, ArrowRight, Calendar, CheckCircle2 } from 'lucide-react';
 
 export const TechnologyInnovation: React.FC = () => {
@@ -29,25 +28,8 @@ export const TechnologyInnovation: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-20 sm:space-y-28 pb-24">
-      <PageHeader
-        badge="Campus • STEM"
-        title="Technology & Innovation"
-        tagline="Next-generation robotics maker spaces, AI development laboratories, and immersive media studios."
-        breadcrumbs={[
-          { label: 'Campus', href: '/campus' },
-          { label: 'Technology & Innovation' }
-        ]}
-        actions={
-          <Link
-            to="/book-a-visit"
-            className="px-6 py-3 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl shadow-xs transition-all flex items-center gap-1.5"
-          >
-            <Calendar className="w-4 h-4" />
-            <span>Book Campus Tour</span>
-          </Link>
-        }
-      />
+    <section id="technology-innovation" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
+      
 
       {/* Intro */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -110,22 +92,7 @@ export const TechnologyInnovation: React.FC = () => {
         ))}
       </section>
 
-      {/* Navigation Links */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 rounded-3xl bg-amber-50/70 border border-amber-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div>
-            <h3 className="font-serif text-xl font-bold text-slate-950">Return to Campus Overview</h3>
-            <p className="text-xs text-slate-600 mt-0.5">Explore the interactive campus map and complete architectural masterplan.</p>
-          </div>
-          <Link
-            to="/campus"
-            className="px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all flex items-center gap-2 flex-shrink-0"
-          >
-            <span>Campus Masterplan</span>
-            <ArrowRight className="w-4 h-4 text-amber-400" />
-          </Link>
-        </div>
-      </section>
-    </div>
+      
+    </section>
   );
 };

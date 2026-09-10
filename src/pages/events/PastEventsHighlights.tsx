@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { PageHeader } from '../../components/layout/PageHeader';
+import { Link } from 'react-router-dom';
 import { pastEventHighlights } from '../../data/events';
 import { Trophy, Calendar, Sparkles, ArrowRight, Award } from 'lucide-react';
 
 export const PastEventsHighlights: React.FC = () => {
   return (
-    <div className="space-y-16 sm:space-y-24 pb-24">
+    <section id="past-highlights" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
       <PageHeader
         badge="Events • Retrospective"
         title="Past Events & Highlights"
@@ -49,7 +49,6 @@ export const PastEventsHighlights: React.FC = () => {
 
               <div className={`lg:col-span-6 p-8 sm:p-12 space-y-4 ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
                 <div className="inline-flex items-center gap-2 text-xs font-bold text-amber-700">
-                  <Calendar className="w-3.5 h-3.5" />
                   <span>{highlight.date}</span>
                 </div>
 
@@ -89,6 +88,6 @@ export const PastEventsHighlights: React.FC = () => {
           </Link>
         </div>
       </section>
-    </div>
+    </section>
   );
 };

@@ -170,6 +170,7 @@ export interface ApplicationFormData {
   dateOfBirth: string;
   gender: string;
   gradeApplyingFor: string;
+  schoolApplyingFor: string;
   academicYear: string;
   currentSchool: string;
   parentName: string;

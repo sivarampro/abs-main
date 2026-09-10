@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { PageHeader } from '../../components/layout/PageHeader';
+import { Link } from 'react-router-dom';
 import { studentStoriesData } from '../../data/achievements';
 import { Quote, Sparkles, Star, Trophy, ArrowRight, Award } from 'lucide-react';
 
 export const StudentStories: React.FC = () => {
   return (
-    <div className="space-y-16 sm:space-y-24 pb-24">
+    <section id="stories" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
       <PageHeader
         badge="Spotlight • Voice of Scholars"
         title="Student Stories & Journeys"
@@ -89,6 +89,6 @@ export const StudentStories: React.FC = () => {
           </Link>
         </div>
       </section>
-    </div>
+    </section>
   );
 };

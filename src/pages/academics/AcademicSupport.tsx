@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { PageHeader } from '../../components/layout/PageHeader';
 import { HeartHandshake, UserCheck, Sparkles, GraduationCap, ArrowRight, CheckCircle2, BookOpen } from 'lucide-react';
 
 export const AcademicSupport: React.FC = () => {
@@ -28,25 +27,8 @@ export const AcademicSupport: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-20 sm:space-y-28 pb-24">
-      <PageHeader
-        badge="Academics • Mentorship"
-        title="Academic Support & Guidance"
-        tagline="Personalized tutoring, gifted enrichment, learning diversity support, and world-class college counseling."
-        breadcrumbs={[
-          { label: 'Academics', href: '/academics' },
-          { label: 'Academic Support' }
-        ]}
-        actions={
-          <Link
-            to="/apply"
-            className="px-6 py-3 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl shadow-xs transition-all flex items-center gap-1.5"
-          >
-            <span>Apply Online</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
-        }
-      />
+    <section id="support" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
+      
 
       {/* Intro */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -76,22 +58,7 @@ export const AcademicSupport: React.FC = () => {
         </div>
       </section>
 
-      {/* Navigation Footer */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 rounded-3xl bg-amber-50/70 border border-amber-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div>
-            <h3 className="font-serif text-xl font-bold text-slate-950">Next: Assessment & Progress</h3>
-            <p className="text-xs text-slate-600 mt-0.5">Understand our continuous competency-based evaluation and analytics reporting.</p>
-          </div>
-          <Link
-            to="/academics/assessment-progress"
-            className="px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all flex items-center gap-2 flex-shrink-0"
-          >
-            <span>Assessment & Progress</span>
-            <ArrowRight className="w-4 h-4 text-amber-400" />
-          </Link>
-        </div>
-      </section>
-    </div>
+      
+    </section>
   );
 };

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { PageHeader } from '../../components/layout/PageHeader';
 import { Trophy, Activity, Sparkles, ShieldCheck, ArrowRight, Calendar, CheckCircle2 } from 'lucide-react';
 
 export const SportsRecreation: React.FC = () => {
@@ -29,25 +28,8 @@ export const SportsRecreation: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-20 sm:space-y-28 pb-24">
-      <PageHeader
-        badge="Campus • Athletics"
-        title="Sports & Recreation"
-        tagline="Olympic-standard sports facilities, championship athletic arenas, and fitness suites."
-        breadcrumbs={[
-          { label: 'Campus', href: '/campus' },
-          { label: 'Sports & Recreation' }
-        ]}
-        actions={
-          <Link
-            to="/book-a-visit"
-            className="px-6 py-3 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl shadow-xs transition-all flex items-center gap-1.5"
-          >
-            <Calendar className="w-4 h-4" />
-            <span>Book Campus Tour</span>
-          </Link>
-        }
-      />
+    <section id="sports-recreation" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
+      
 
       {/* Intro */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -110,22 +92,7 @@ export const SportsRecreation: React.FC = () => {
         ))}
       </section>
 
-      {/* Navigation Links */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 rounded-3xl bg-amber-50/70 border border-amber-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div>
-            <h3 className="font-serif text-xl font-bold text-slate-950">Next Campus Facility</h3>
-            <p className="text-xs text-slate-600 mt-0.5">Explore our vibrant student lounges, cafeteria, and open courtyards.</p>
-          </div>
-          <Link
-            to="/campus/student-life-spaces"
-            className="px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all flex items-center gap-2 flex-shrink-0"
-          >
-            <span>Student Life & Common Spaces</span>
-            <ArrowRight className="w-4 h-4 text-amber-400" />
-          </Link>
-        </div>
-      </section>
-    </div>
+      
+    </section>
   );
 };

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { PageHeader } from '../../components/layout/PageHeader';
 import { studentLifePillars, schoolHouses } from '../../data/studentLife';
 import { Sparkles, Palette, Trophy, Cpu, HeartHandshake, ShieldCheck, ArrowRight, CheckCircle2, Users } from 'lucide-react';
+import { Arts, Athletics, Innovation, Community, Wellbeing } from './PillarDetailPage';
 
 export const StudentLifeOverview: React.FC = () => {
   const getPillarIcon = (category: string) => {
@@ -40,6 +41,31 @@ export const StudentLifeOverview: React.FC = () => {
           </Link>
         }
       />
+
+      {/* Sticky Table of Contents Navigation */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 sm:-mt-14 relative z-10">
+        <div className="bg-white/95 backdrop-blur-md rounded-2xl border border-slate-200 shadow-md p-2 sm:p-3">
+          <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar scroll-smooth">
+            {[
+              { id: 'arts', number: '01', title: 'Arts & Culture' },
+              { id: 'athletics', number: '02', title: 'Sports & Athletics' },
+              { id: 'innovation', number: '03', title: 'Innovation & Technology' },
+              { id: 'community', number: '04', title: 'Clubs, Leadership & Community' },
+            ].map((sec) => (
+              <Link
+                key={sec.id}
+                to={`/student-life#${sec.id}`}
+                className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-slate-50 hover:bg-amber-50 hover:text-amber-900 text-slate-700 transition-all border border-slate-200/80 hover:border-amber-300 flex-shrink-0"
+              >
+                <span className="w-5 h-5 rounded-full bg-amber-400/20 text-amber-800 text-[10px] font-bold flex items-center justify-center">
+                  {sec.number}
+                </span>
+                <span>{sec.title}</span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
 
       {/* 1. House System Showcase */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
@@ -127,7 +153,7 @@ export const StudentLifeOverview: React.FC = () => {
 
               <div className="p-6 pt-0">
                 <Link
-                  to={`/student-life/${pillar.slug}`}
+                  to={`/student-life#${pillar.slug}`}
                   className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all"
                 >
                   <span>Explore {pillar.title}</span>
@@ -138,6 +164,12 @@ export const StudentLifeOverview: React.FC = () => {
           ))}
         </div>
       </section>
+
+      {/* Render Subsections */}
+      <Arts />
+      <Athletics />
+      <Innovation />
+      <Community />
 
     </div>
   );

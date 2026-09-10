@@ -36,7 +36,11 @@ import { fiveSchoolsData, whatToExpectData } from '../data/schoolsData';
 import { EventRSVPModal } from '../components/widgets/EventRSVPModal';
 import { ScrollStackedSchools } from '../components/home/ScrollStackedSchools';
 import { MovingTickerStrip } from '../components/home/MovingTickerStrip';
+import { Typewriter } from '../components/common/Typewriter';
+import { FadeIn } from '../components/common/FadeIn';
 import { SchoolEvent } from '../types';
+import studentJumping from '../assets/images/about/student_jumping.png';
+import studentJumpingBoy from '../assets/images/about/student_jumping_boy.png';
 
 export const Home: React.FC = () => {
   const [selectedEvent, setSelectedEvent] = useState<SchoolEvent | null>(null);
@@ -306,17 +310,12 @@ export const Home: React.FC = () => {
                 <ArrowRight className="w-4 h-4" />
               </a>
               <Link
-                to="/apply"
+                to="/admissions"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm uppercase tracking-wider transition-all shadow-md hover:shadow-lg"
               >
-                <span>Apply Online 2026-27</span>
+                <span>Admission Online 2026-27</span>
               </Link>
-              <Link
-                to="/book-a-visit"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-white hover:bg-slate-50 text-slate-800 border border-slate-300 font-bold text-sm uppercase tracking-wider transition-all"
-              >
-                <span>Book a Campus Visit</span>
-              </Link>
+
             </div>
 
             {/* Group Key Stats Bar */}
@@ -343,6 +342,21 @@ export const Home: React.FC = () => {
               </div>
             </div>
 
+            {/* Animated Peeking Students in Hero */}
+            <div className="absolute left-0 bottom-0 w-full h-0 pointer-events-none z-10">
+              <img 
+                src={studentJumpingBoy} 
+                alt="" 
+                className="absolute z-10 w-24 sm:w-32 h-auto animate-peek-boy opacity-90" 
+                style={{ transformOrigin: 'bottom center', bottom: '-10px' }}
+              />
+              <img 
+                src={studentJumping} 
+                alt="" 
+                className="absolute z-10 w-24 sm:w-32 h-auto animate-peek-girl opacity-90" 
+                style={{ transformOrigin: 'bottom center', bottom: '-10px' }}
+              />
+            </div>
           </div>
         </section>
 
@@ -367,7 +381,6 @@ export const Home: React.FC = () => {
           {/* Header */}
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 text-amber-400 border border-amber-400/30 text-xs font-bold uppercase tracking-widest">
-              <Compass className="w-3.5 h-3.5" />
               <span>About Us</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white">
@@ -425,11 +438,10 @@ export const Home: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="The Learning Journey">
         <div className="text-center space-y-4 mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-300 text-xs font-bold uppercase tracking-widest">
-            <GraduationCap className="w-3.5 h-3.5 text-amber-600" />
             <span>The Learning Journey</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight">
-            Early Years → Senior Secondary
+            <Typewriter text="Early Years → Senior Secondary" speed={60} />
           </h2>
 
         </div>
@@ -437,31 +449,30 @@ export const Home: React.FC = () => {
         {/* 5 Stages Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {academicDivisions.map((division, idx) => (
-            <Link
-              key={division.id}
-              to={`/academics/${division.slug}`}
-              className="bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between space-y-4 hover:border-amber-400 hover:shadow-card-hover transition-all group"
-            >
-              <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-700 group-hover:bg-amber-100 group-hover:text-amber-900 transition-colors">
-                    Stage 0{idx + 1}
+            <FadeIn key={division.id} delay={idx * 150} className="h-full">
+              <Link
+                to={`/academics/${division.slug}`}
+                className="h-full bg-white rounded-2xl border border-slate-200 p-6 flex flex-col justify-between space-y-4 hover:border-amber-400 hover:shadow-card-hover transition-all group"
+              >
+                <div className="space-y-3">
+                  <div className="flex items-center justify-between">
+                    <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-100 text-slate-700 group-hover:bg-amber-100 group-hover:text-amber-900 transition-colors">
+                      Stage 0{idx + 1}
+                    </span>
+                    <span className="text-[11px] font-semibold text-amber-700">{division.ageRange}</span>
+                  </div>
+                  <h3 className="font-serif text-lg font-bold text-slate-900 group-hover:text-amber-700 transition-colors">
+                    {division.name}
+                  </h3>
+                  <span className="text-xs font-semibold text-slate-500 block">
+                    {division.gradeRange}
                   </span>
-                  <span className="text-[11px] font-semibold text-amber-700">{division.ageRange}</span>
+                  <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
+                    {division.overview}
+                  </p>
                 </div>
-                <h3 className="font-serif text-lg font-bold text-slate-900 group-hover:text-amber-700 transition-colors">
-                  {division.name}
-                </h3>
-                <span className="text-xs font-semibold text-slate-500 block">
-                  {division.gradeRange}
-                </span>
-                <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
-                  {division.overview}
-                </p>
-              </div>
-
-
-            </Link>
+              </Link>
+            </FadeIn>
           ))}
         </div>
 
@@ -482,7 +493,6 @@ export const Home: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="More Than A Classroom">
         <div className="text-center space-y-4 mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-300 text-xs font-bold uppercase tracking-widest">
-            <Sparkles className="w-3.5 h-3.5 text-amber-600" />
             <span>More Than A Classroom</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight">
@@ -572,7 +582,6 @@ export const Home: React.FC = () => {
           
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-300 text-xs font-bold uppercase tracking-widest">
-              <Building2 className="w-3.5 h-3.5 text-amber-600" />
               <span>Our Campuses</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight">
@@ -582,26 +591,26 @@ export const Home: React.FC = () => {
           </div>
 
           {/* Campus Selector Buttons */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+          <div className="flex overflow-x-auto hide-scrollbar snap-x snap-mandatory gap-2 pb-4 mb-4 sm:grid sm:grid-cols-3 lg:grid-cols-5 sm:gap-3 sm:pb-0">
             {fiveSchoolsData.map((school) => (
               <button
                 key={school.id}
                 onClick={() => setActiveSchoolId(school.id)}
-                className={`p-4 rounded-2xl border text-left transition-all flex flex-col justify-between ${
+                className={`snap-center flex-shrink-0 w-[160px] sm:w-auto p-3 sm:p-4 rounded-xl sm:rounded-2xl border text-left transition-all flex flex-col justify-center sm:justify-between ${
                   activeSchoolId === school.id
                     ? 'bg-slate-900 text-white border-slate-900 shadow-md ring-2 ring-amber-400'
                     : 'bg-white text-slate-700 border-slate-200 hover:border-slate-300'
                 }`}
               >
-                <span className={`text-[10px] font-bold uppercase tracking-wider block ${
+                <span className={`text-[9px] sm:text-[10px] font-bold uppercase tracking-wider block whitespace-nowrap overflow-hidden text-ellipsis ${
                   activeSchoolId === school.id ? 'text-amber-400' : 'text-slate-500'
                 }`}>
                   {school.location}
                 </span>
-                <span className="font-serif font-bold text-sm block mt-1">
+                <span className="font-serif font-bold text-sm sm:text-base block mt-1 whitespace-nowrap overflow-hidden text-ellipsis">
                   {school.shortName}
                 </span>
-                <span className={`text-[11px] block mt-1 ${
+                <span className={`text-[10px] sm:text-[11px] block mt-0.5 sm:mt-1 ${
                   activeSchoolId === school.id ? 'text-slate-300' : 'text-slate-500'
                 }`}>
                   {school.category}
@@ -613,13 +622,12 @@ export const Home: React.FC = () => {
           {/* Active Campus Preview Card */}
           <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-card">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
-              <div className="lg:col-span-7 relative aspect-video lg:aspect-auto h-full min-h-[350px]">
+              <div className="lg:col-span-7 bg-slate-50 flex flex-col justify-center p-4 sm:p-6 lg:p-0">
                 <img
                   src={activeCampus.image}
                   alt={activeCampus.name}
-                  className="w-full h-full object-contain bg-slate-50"
+                  className="w-full h-auto object-contain rounded-xl lg:rounded-none lg:rounded-l-3xl shadow-sm lg:shadow-none"
                 />
-
               </div>
 
               <div className="lg:col-span-5 p-8 sm:p-10 space-y-6 flex flex-col justify-between">
@@ -663,12 +671,6 @@ export const Home: React.FC = () => {
                     <span>Visit Campus Portal</span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
-                  <Link
-                    to="/book-a-visit"
-                    className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-amber-400 hover:bg-amber-300 text-slate-950 rounded-xl text-xs font-bold uppercase tracking-wider transition-colors"
-                  >
-                    <span>Schedule Tour</span>
-                  </Link>
                 </div>
               </div>
             </div>
@@ -720,7 +722,6 @@ export const Home: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-300 text-xs font-bold uppercase tracking-widest">
-              <Calendar className="w-3.5 h-3.5 text-amber-600" />
               <span>Events</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight">
@@ -813,7 +814,6 @@ export const Home: React.FC = () => {
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" aria-label="Achievements">
         <div className="text-center space-y-4 mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-300 text-xs font-bold uppercase tracking-widest">
-            <Trophy className="w-3.5 h-3.5 text-amber-600" />
             <span>Achievements</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight">
@@ -885,7 +885,6 @@ export const Home: React.FC = () => {
           <div className="flex flex-col items-center text-center space-y-6">
             
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-300 text-xs font-bold uppercase tracking-widest">
-              <Globe className="w-3.5 h-3.5 text-amber-600" />
               <span>Alumni Network</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight">
@@ -922,7 +921,6 @@ export const Home: React.FC = () => {
           
           <div className="text-center space-y-4 max-w-3xl mx-auto">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 text-amber-400 border border-amber-400/30 text-xs font-bold uppercase tracking-widest">
-              <Users className="w-3.5 h-3.5" />
               <span>Community Voices</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-5xl font-bold text-white tracking-tight">
@@ -969,7 +967,6 @@ export const Home: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div className="space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-300 text-xs font-bold uppercase tracking-widest">
-              <BookOpen className="w-3.5 h-3.5 text-amber-600" />
               <span>ABS Journal</span>
             </div>
             <h2 className="font-serif text-3xl sm:text-5xl font-bold text-slate-900 tracking-tight">
@@ -1044,7 +1041,6 @@ export const Home: React.FC = () => {
             
             <div className="lg:col-span-7 space-y-4 text-white">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 text-white text-xs font-bold uppercase tracking-widest backdrop-blur-xs">
-                <Target className="w-3.5 h-3.5" />
                 <span>Admissions Open 2026-27</span>
               </div>
               <h2 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
@@ -1081,7 +1077,7 @@ export const Home: React.FC = () => {
 
             <div className="lg:col-span-5 flex flex-col gap-3.5">
               <Link
-                to="/apply"
+                to="/admissions"
                 className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-slate-950 hover:bg-slate-900 text-white rounded-2xl font-bold text-sm uppercase tracking-wider shadow-lg transition-all transform hover:-translate-y-0.5"
               >
                 <span>Complete Online Application</span>

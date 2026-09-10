@@ -31,6 +31,7 @@ export const Apply: React.FC = () => {
     dateOfBirth: '',
     gender: 'Female',
     gradeApplyingFor: prefilledGrade || 'Grade 1 (Primary)',
+    schoolApplyingFor: 'ABS Global Smart School - Korattur',
     academicYear: '2026–2027',
     currentSchool: '',
     parentName: '',
@@ -90,19 +91,16 @@ export const Apply: React.FC = () => {
   };
 
   return (
-    <div className="space-y-16 sm:space-y-24 pb-24">
-      
-      <PageHeader
-        badge="Online Application"
-        title="Student Admission Enquiry & Application"
-        tagline="Begin your application for the 2026–2027 academic session. All applications are reviewed holistically by our Admissions Committee."
-        breadcrumbs={[
-          { label: 'Admissions', href: '/admissions' },
-          { label: 'Apply Online' }
-        ]}
-      />
-
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="apply" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24">
+      <div className="text-center max-w-xl mx-auto space-y-2 mb-12">
+        <span className="text-xs font-bold uppercase tracking-widest text-amber-700">Apply Now</span>
+        <h2 className="font-serif text-3xl font-bold text-slate-950">
+          Student Admission Application
+        </h2>
+        <p className="text-slate-600 text-sm">
+          Begin your application for the 2026–2027 academic session. All applications are reviewed holistically by our Admissions Committee.
+        </p>
+      </div>
         
         {submissionResult ? (
           /* Success Receipt Card */
@@ -259,6 +257,23 @@ export const Apply: React.FC = () => {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="sm:col-span-2">
+                  <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
+                    School Applying For *
+                  </label>
+                  <select
+                    value={formData.schoolApplyingFor}
+                    onChange={(e) => setFormData({ ...formData, schoolApplyingFor: e.target.value })}
+                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium focus:outline-none focus:border-amber-400"
+                  >
+                    <option value="ABS Global Smart School - Korattur">ABS Global Smart School - Korattur</option>
+                    <option value="ABS Global Smart School - Avadi">ABS Global Smart School - Avadi</option>
+                    <option value="ABS Global Smart School - JN Road">ABS Global Smart School - JN Road</option>
+                    <option value="ABS Vidhya Mandhir">ABS Vidhya Mandhir</option>
+                    <option value="ABS Vidhyaalayaa">ABS Vidhyaalayaa</option>
+                  </select>
+                </div>
+
                 <div>
                   <label className="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-1">
                     Grade Applying For *
@@ -460,7 +475,5 @@ export const Apply: React.FC = () => {
         )}
 
       </section>
-
-    </div>
   );
 };

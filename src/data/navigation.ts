@@ -8,23 +8,23 @@ export const navigationData: NavItem[] = [
   {
     label: 'About Us',
     children: [
-      { label: 'Our Legacy', href: '/about/legacy' },
-      { label: 'Vision, Mission, Motto', href: '/about/vision-mission-motto' },
-      { label: "Founder's Message", href: '/about/founder-message' },
-      { label: 'Managing Director', href: '/about/managing-director' },
-      { label: 'Academic Director', href: '/about/academic-director' },
+      { label: 'About ABS', href: '/about#about-abs' },
+      { label: 'Vision & Mission', href: '/about#vision-mission' },
+      { label: 'What to Expect', href: '/about#what-to-expect' },
+      { label: "Founder's Message", href: '/about#founders-message' },
+      { label: 'Academic Director', href: '/about#academic-director' },
+      { label: 'Managing Committee', href: '/about#managing-committee' },
     ]
   },
   {
     label: 'Campus',
     children: [
       { label: 'Campus Overview', href: '/campus' },
-      { label: 'Learning Spaces', href: '/campus/learning-spaces' },
-      { label: 'Arts & Creativity', href: '/campus/arts-creativity' },
-      { label: 'Sports & Recreation', href: '/campus/sports-recreation' },
-      { label: 'Student Life & Common Spaces', href: '/campus/student-life-spaces' },
-      { label: 'Wellbeing & Safety', href: '/campus/wellbeing-safety' },
-      { label: 'Technology & Innovation', href: '/campus/technology-innovation' },
+      { label: 'Learning & Academic Spaces', href: '/campus#learning-spaces' },
+      { label: 'Arts & Creativity', href: '/campus#arts-creativity' },
+      { label: 'Sports & Recreation', href: '/campus#sports-recreation' },
+      { label: 'Student Life & Wellbeing', href: '/campus#student-life-wellbeing' },
+      { label: 'Technology & Innovation', href: '/campus#technology-innovation' },
     ]
   },
   {
@@ -33,69 +33,59 @@ export const navigationData: NavItem[] = [
       { label: 'Academic Overview', href: '/academics' },
       {
         label: 'Learning Journey',
-        href: '/academics/learning-journey',
+        href: '/academics#learning-journey',
         children: [
-          { label: 'Early Years', href: '/academics/early-years' },
-          { label: 'Primary School', href: '/academics/primary' },
-          { label: 'Middle School', href: '/academics/middle-school' },
-          { label: 'Secondary School', href: '/academics/secondary' },
-          { label: 'Senior Secondary', href: '/academics/senior-secondary' },
+          { label: 'Early Years', href: '/academics#early-years' },
+          { label: 'Primary School', href: '/academics#primary' },
+          { label: 'Middle School', href: '/academics#middle-school' },
+          { label: 'Secondary School', href: '/academics#secondary' },
+          { label: 'Senior Secondary', href: '/academics#senior-secondary' },
         ]
       },
-      { label: 'Curriculum', href: '/academics/curriculum' },
-      { label: 'Teaching & Learning', href: '/academics/teaching-learning' },
-      { label: 'Technology & Innovation', href: '/academics/technology-innovation' },
-      { label: 'Academic Support', href: '/academics/support' },
-      { label: 'Assessment & Progress', href: '/academics/assessment-progress' },
+      { label: 'Curriculum', href: '/academics#curriculum' },
+      { label: 'Teaching & Learning', href: '/academics#teaching-learning' },
+      { label: 'Technology & Innovation', href: '/academics#technology-innovation' },
+      { label: 'Academic Support', href: '/academics#support' },
+      { label: 'Assessment & Progress', href: '/academics#assessment-progress' },
     ]
   },
   {
     label: 'Co-Curricular Activities',
     children: [
-      { label: 'Student Life Overview', href: '/student-life', description: 'House system, leadership, clubs & vibrant daily life' },
-      { label: 'Arts & Culture', href: '/student-life/arts', description: 'Visual arts, theatre productions, choir & instrumental music' },
-      { label: 'Athletics & Sports', href: '/student-life/athletics', description: 'Olympic-standard coaching, fitness & championship teams' },
-      { label: 'Innovation & Technology', href: '/student-life/innovation', description: 'Robotics, coding labs, AI incubator & maker spaces' },
-      { label: 'Community & Service', href: '/student-life/community', description: 'Social impact, environmental sustainability & outreach' },
+      { label: 'Co-Curricular Overview', href: '/student-life', description: 'House system, leadership, clubs & vibrant daily life' },
+      { label: 'Arts & Culture', href: '/student-life#arts', description: 'Visual arts, theatre productions, choir & instrumental music' },
+      { label: 'Sports & Athletics', href: '/student-life#athletics', description: 'Olympic-standard coaching, fitness & championship teams' },
+      { label: 'Innovation & Technology', href: '/student-life#innovation', description: 'Robotics, coding labs, AI incubator & maker spaces' },
+      { label: 'Clubs, Leadership & Community', href: '/student-life#community', description: 'Social impact, environmental sustainability & outreach' },
     ]
   },
   {
     label: 'Events',
     children: [
       { label: 'Events Overview', href: '/events' },
-      { label: 'Upcoming Events', href: '/events/upcoming' },
-      { label: 'Featured Events', href: '/events/featured' },
-      { label: 'Academic Events', href: '/events/academic' },
-      { label: 'Arts & Cultural', href: '/events/arts-cultural' },
-      { label: 'Sports Events', href: '/events/sports' },
-      { label: 'Community Events', href: '/events/community' },
-      { label: 'Annual Calendar', href: '/events/calendar' },
-      { label: 'Past Events & Highlights', href: '/events/past-highlights' },
+      { label: 'Upcoming Events', href: '/events#upcoming' },
+      { label: 'Academic Event', href: '/events#academic' },
+      { label: 'Sports & Activities', href: '/events#sports' },
+      { label: 'Annual Events', href: '/events#annual' },
+      { label: 'Festival and Community Events', href: '/events#community' },
     ]
   },
   {
     label: 'Achievements',
     children: [
       { label: 'All Achievements', href: '/achievements' },
-      { label: 'Academic Excellence', href: '/achievements/academic' },
-      { label: 'Sports', href: '/achievements/sports' },
-      { label: 'Arts & Culture', href: '/achievements/arts-culture' },
-      { label: 'Innovation', href: '/achievements/innovation' },
-      { label: 'Leadership', href: '/achievements/leadership' },
-      { label: 'Student Stories', href: '/achievements/student-stories' },
+      { label: 'Academic Excellence', href: '/achievements#academic' },
+      { label: 'Sports & Athletics', href: '/achievements#sports' },
+      { label: 'Arts, Innovation & Culture', href: '/achievements#arts-innovation-culture' },
     ]
   },
   {
     label: 'Alumni',
-    children: [
-      { label: 'Alumni Network', href: '/alumni' },
-    ]
+    href: '/alumni',
   },
   {
     label: 'Journal',
-    children: [
-      { label: 'ABS Journal', href: '/journal' },
-    ]
+    href: '/journal',
   },
 ];
 

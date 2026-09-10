@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { PageHeader } from '../../components/layout/PageHeader';
+import { Link } from 'react-router-dom';
 import { academicCalendarTerms } from '../../data/events';
 import { Calendar, Download, Bookmark, Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { useToast } from '../../components/common/ToastContext';
@@ -14,7 +14,7 @@ export const AnnualCalendar: React.FC = () => {
   };
 
   return (
-    <div className="space-y-16 sm:space-y-24 pb-24">
+    <section id="annual" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
       <PageHeader
         badge="Events • Schedule"
         title="Annual Academic Calendar"
@@ -89,6 +89,6 @@ export const AnnualCalendar: React.FC = () => {
 
         </div>
       </section>
-    </div>
+    </section>
   );
 };

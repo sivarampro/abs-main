@@ -19,65 +19,18 @@ export const AdmissionsOverview: React.FC = () => {
             to="/apply"
             className="px-6 py-3 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl shadow-xs transition-all flex items-center gap-1.5"
           >
-            <span>Apply Online</span>
+            <span>Admission Online</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         }
       />
 
-      {/* 1. Four-Step Admission Journey */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-bold uppercase tracking-widest text-amber-700">Simple 4-Step Process</span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-950">
-            How to Apply to ABS
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-600">
-            We evaluate applicants holistically, seeking students who embody curiosity, character, and a passion for learning.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {admissionSteps.map((step) => (
-            <div
-              key={step.stepNumber}
-              className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200 shadow-card hover:shadow-card-hover transition-all flex flex-col justify-between space-y-6"
-            >
-              <div className="space-y-4">
-                <div className="w-12 h-12 rounded-2xl bg-amber-400 text-slate-950 font-serif font-bold text-xl flex items-center justify-center shadow-xs">
-                  0{step.stepNumber}
-                </div>
-                <h3 className="font-serif text-xl font-bold text-slate-950">
-                  {step.title}
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  {step.description}
-                </p>
-                <div className="p-2.5 rounded-xl bg-amber-50/70 border border-amber-200/80 text-[11px] text-amber-900 font-medium">
-                  <strong>Timeline:</strong> {step.timeline}
-                </div>
-              </div>
-
-              <div className="space-y-1 pt-3 border-t border-slate-100">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">Required Items</span>
-                {step.requirements.map((req, i) => (
-                  <div key={i} className="flex items-center gap-1.5 text-xs text-slate-700">
-                    <CheckCircle2 className="w-3 h-3 text-emerald-600 flex-shrink-0" />
-                    <span className="truncate">{req}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 2. Interactive Grade Finder Widget */}
+      {/* 1. Interactive Grade Finder Widget */}
       <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <GradeCalculator />
       </section>
 
-      {/* 3. Quick Links to Fees & Scholarships */}
+      {/* 2. Quick Links to Fees & Scholarships */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           

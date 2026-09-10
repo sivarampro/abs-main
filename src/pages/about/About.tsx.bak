@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { PageHeader } from '../../components/layout/PageHeader';
-import { FadeIn } from '../../components/common/FadeIn';
-import { Typewriter } from '../../components/common/Typewriter';
 import { 
   Sparkles, 
   Eye, 
@@ -152,20 +150,15 @@ export const About: React.FC = () => {
           </div>
         </div>
 
-        <FadeIn delay={100}>
         <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-xl relative overflow-hidden">
           <div className="absolute -right-20 -bottom-20 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
           
           <div className="relative z-10 space-y-8">
-            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-amber-400 whitespace-pre-line min-h-[4rem] sm:min-h-[5rem]">
-              <Typewriter 
-                text={"Honouring a Legacy Since 1936.\nReimagining School Education Since 2010."} 
-                speed={30} 
-                delay={200} 
-              />
+            <h3 className="font-serif text-2xl sm:text-3xl font-bold text-amber-400">
+              Honouring a Legacy Since 1936.<br className="hidden sm:block" />
+              Reimagining School Education Since 2010.
             </h3>
             
-            <FadeIn delay={2400}>
             <div className="space-y-6 text-slate-300 text-sm sm:text-base leading-relaxed font-normal max-w-4xl">
               <p>
                 For generations, the ABS family has remained committed to serving society through education. Built on a legacy that began in 1936, ABS entered the field of school education in 2010 with a vision to create learning environments where every child is inspired to learn, grow and flourish.
@@ -186,7 +179,6 @@ export const About: React.FC = () => {
                 "At ABS, we do not simply prepare children for the future—we inspire them to shape it."
               </p>
             </div>
-            </FadeIn>
 
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-slate-800">
               <div>
@@ -208,7 +200,6 @@ export const About: React.FC = () => {
             </div>
           </div>
         </div>
-        </FadeIn>
       </section>
 
       {/* ========================================================================= */}
@@ -228,7 +219,6 @@ export const About: React.FC = () => {
           </div>
         </div>
 
-        <FadeIn delay={100} className="space-y-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="p-8 sm:p-10 rounded-3xl bg-slate-900 text-white border border-slate-800 space-y-4 shadow-xl flex flex-col">
             <div className="space-y-3 flex-1">
@@ -264,6 +254,7 @@ export const About: React.FC = () => {
         {/* Our Motto */}
         <div className="bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 rounded-3xl p-8 sm:p-10 border border-slate-700 shadow-xl text-white text-center space-y-4">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/10 text-amber-400 border border-amber-400/20 text-xs font-bold uppercase tracking-wider mb-2">
+            <Sparkles className="w-4 h-4" />
             <span>Our Motto</span>
           </div>
           <h3 className="font-serif text-3xl font-bold text-white tracking-wide">
@@ -303,7 +294,6 @@ export const About: React.FC = () => {
             </p>
           </div>
         </div>
-        </FadeIn>
       </section>
 
       {/* ========================================================================= */}
@@ -323,7 +313,6 @@ export const About: React.FC = () => {
           </div>
         </div>
 
-        <FadeIn delay={100}>
         <div className="bg-slate-950 text-white rounded-3xl border border-slate-800 shadow-xl overflow-hidden flex flex-col lg:flex-row">
           <div className="p-8 sm:p-12 lg:w-3/5 space-y-6">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4">
@@ -352,7 +341,6 @@ export const About: React.FC = () => {
              </div>
           </div>
         </div>
-        </FadeIn>
       </section>
 
       {/* ========================================================================= */}
@@ -372,7 +360,6 @@ export const About: React.FC = () => {
           </div>
         </div>
 
-        <FadeIn delay={100}>
         <div className="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden flex flex-col lg:flex-row">
           {/* Portrait Section */}
           <div className="bg-slate-50 lg:w-2/5 flex flex-col items-center justify-center p-8 sm:p-12 border-b lg:border-b-0 lg:border-r border-slate-200">
@@ -395,29 +382,20 @@ export const About: React.FC = () => {
 
           {/* Message Section */}
           <div className="p-8 sm:p-12 lg:w-3/5 space-y-6 text-slate-800 font-normal leading-relaxed text-sm sm:text-base">
-            <FadeIn delay={200}>
             <p>
               At ABS Group of schools, we have crafted an environment where students are always learning. We have created an ever-evolving, technologically driven holistic education system with all facilities needed to bring out the best in every student while accelerating their learning pace from time to time.
             </p>
-            </FadeIn>
-            <FadeIn delay={300}>
             <p>
               To help the children go beyond academics and technical skills, we emphasise teamwork, critical thinking, creativity, effective communication and values that prepare students for the real world. In this competitive landscape, our children will mark their place in the world as leaders who are morally and socially responsible.
             </p>
-            </FadeIn>
-            <FadeIn delay={400}>
             <p>
               Our integrated curriculum focuses on 360 degree - development of the child through the domains of Linguistic skills, Logical reasoning and Creativity, Quantitative and Technical skills development while also nurturing their personality. This is possible through our multi-modal approach of classroom studies and industrial visits, social activities, live projects, seminars, cultural activities and Entrepreneurship development.
             </p>
-            </FadeIn>
-            <FadeIn delay={500}>
             <p>
               With a highly efficient - tested curriculum, highly spacious classrooms designed for an enriched learning environment and strong pedagogy implementers, we believe the next generation of leaders will rise from ABS Group of Schools, with their commitment to create growth in the society and for our nation.
             </p>
-            </FadeIn>
           </div>
         </div>
-        </FadeIn>
       </section>
 
       {/* ========================================================================= */}
@@ -437,7 +415,6 @@ export const About: React.FC = () => {
           </div>
         </div>
 
-        <FadeIn delay={100}>
         <div className="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden flex flex-col lg:flex-row-reverse">
           {/* Portrait Section */}
           <div className="bg-slate-900 text-white lg:w-2/5 flex flex-col items-center justify-center p-8 sm:p-12 relative">
@@ -462,45 +439,30 @@ export const About: React.FC = () => {
 
           {/* Message Section */}
           <div className="p-8 sm:p-12 lg:w-3/5 space-y-6 text-slate-800 font-normal leading-relaxed text-sm sm:text-base">
-            <FadeIn delay={200}>
             <div className="p-5 rounded-2xl bg-amber-50/70 border-l-4 border-amber-500 font-serif text-base sm:text-lg text-slate-900 italic font-semibold">
               "True education enlightens the mind, strengthens character, and shapes the future."
             </div>
-            </FadeIn>
 
-            <FadeIn delay={300}>
             <p>
               At ABS Institutions, education goes beyond textbooks and examinations. It is a purposeful journey aimed at nurturing compassionate, progressive, and professionally successful individuals who are responsive to global culture and heritage.
             </p>
-            </FadeIn>
-            <FadeIn delay={400}>
             <p>
               Rooted in an environment of love, sharing, and mutual respect, we firmly believe that every child is born with unique potential. Our role is to provide a supportive, vibrant, and value-driven learning atmosphere where this potential is nurtured, leading to the holistic development of the learner—academically, emotionally, socially, and ethically.
             </p>
-            </FadeIn>
-            <FadeIn delay={500}>
             <p>
               Guided by our mission, we provide a vibrant forum for quality education, grounded in scientific temper and adaptable to the changing needs of the time. Through a balanced blend of academics and co-curricular experiences, we focus on building confidence, character, and competence, preparing students to meet the challenges of today's dynamic world.
             </p>
-            </FadeIn>
-            <FadeIn delay={600}>
             <p>
               Drawing inspiration from India's rich cultural and spiritual heritage, while embracing global perspectives, we instill values of integrity, respect, empathy, tolerance, and responsibility. These values empower our students to make ethical choices and contribute meaningfully to society.
             </p>
-            </FadeIn>
-            <FadeIn delay={700}>
             <p>
               Our holistic approach ensures the intellectual, emotional, social, and physical development of every learner. With the guidance of dedicated educators and a balanced curriculum, students are groomed to think critically, communicate confidently, and face future challenges with resilience. We deeply value our partnership with parents and together strive to nurture lifelong learners and principled global citizens prepared to lead with knowledge, values, and purpose.
             </p>
-            </FadeIn>
-            <FadeIn delay={800}>
             <p className="font-serif font-bold text-slate-950 text-center sm:text-left mt-6">
               'As we educate minds with knowledge and hearts with values, we shape a generation ready to lead with wisdom, compassion, and purpose'.
             </p>
-            </FadeIn>
           </div>
         </div>
-        </FadeIn>
       </section>
 
       {/* ========================================================================= */}
@@ -520,7 +482,6 @@ export const About: React.FC = () => {
           </div>
         </div>
 
-        <FadeIn delay={100}>
         <div className="bg-amber-50/50 rounded-3xl border border-amber-100 p-8 sm:p-12 shadow-sm">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <div className="relative z-10 w-full rounded-2xl overflow-hidden border-4 border-amber-400 shadow-xl bg-white transition-transform hover:-translate-y-2">
@@ -548,7 +509,6 @@ export const About: React.FC = () => {
             </div>
           </div>
         </div>
-        </FadeIn>
       </section>
 
     </div>

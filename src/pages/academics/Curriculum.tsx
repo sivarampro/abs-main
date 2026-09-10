@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { PageHeader } from '../../components/layout/PageHeader';
 import { BookOpen, Globe, Award, Sparkles, CheckCircle2, ArrowRight, Compass, ShieldCheck } from 'lucide-react';
 
 export const Curriculum: React.FC = () => {
@@ -28,31 +27,13 @@ export const Curriculum: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-20 sm:space-y-28 pb-24">
-      <PageHeader
-        badge="Academics • Curriculum"
-        title="Curriculum Framework"
-        tagline="A rigorous, inquiry-led educational architecture designed to cultivate intellectual depth, ethical wisdom, and global readiness."
-        breadcrumbs={[
-          { label: 'Academics', href: '/academics' },
-          { label: 'Curriculum' }
-        ]}
-        actions={
-          <Link
-            to="/apply"
-            className="px-6 py-3 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl shadow-xs transition-all flex items-center gap-1.5"
-          >
-            <span>Apply Online</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
-        }
-      />
+    <section id="curriculum" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
+      
 
       {/* Main Narrative */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-xl space-y-6">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-400/20 text-amber-300 border border-amber-400/30 text-xs font-bold uppercase tracking-wider">
-            <Compass className="w-3.5 h-3.5" />
             <span>Holistic Academic Architecture</span>
           </div>
 
@@ -88,22 +69,7 @@ export const Curriculum: React.FC = () => {
         </div>
       </section>
 
-      {/* Navigation Footer */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 rounded-3xl bg-amber-50/70 border border-amber-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div>
-            <h3 className="font-serif text-xl font-bold text-slate-950">Next: Teaching & Learning</h3>
-            <p className="text-xs text-slate-600 mt-0.5">Discover our pedagogical classroom methods and experiential labs.</p>
-          </div>
-          <Link
-            to="/academics/teaching-learning"
-            className="px-6 py-3 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all flex items-center gap-2 flex-shrink-0"
-          >
-            <span>Teaching & Learning</span>
-            <ArrowRight className="w-4 h-4 text-amber-400" />
-          </Link>
-        </div>
-      </section>
-    </div>
+      
+    </section>
   );
 };

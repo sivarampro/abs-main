@@ -26,30 +26,11 @@ export const DivisionDetailPage: React.FC<DivisionDetailPageProps> = ({ division
   const division = academicDivisions.find((d) => d.slug === activeSlug);
 
   if (!division) {
-    return <Navigate to="/academics" replace />;
+    return null;
   }
 
   return (
-    <div className="space-y-20 sm:space-y-28 pb-24">
-      
-      <PageHeader
-        badge={division.gradeRange}
-        title={division.name}
-        tagline={division.tagline}
-        breadcrumbs={[
-          { label: 'Academics', href: '/academics' },
-          { label: division.name }
-        ]}
-        actions={
-          <Link
-            to={`/apply?grade=${encodeURIComponent(division.gradeRange)}`}
-            className="px-6 py-3 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl shadow-xs transition-all flex items-center gap-1.5"
-          >
-            <span>Apply for {division.name}</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
-        }
-      />
+    <section id={activeSlug} className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
 
       {/* 1. Overview & Philosophy Narrative */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,7 +38,6 @@ export const DivisionDetailPage: React.FC<DivisionDetailPageProps> = ({ division
           
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100/70 border border-amber-300 text-amber-900 text-xs font-bold uppercase tracking-wider">
-              <Sparkles className="w-3.5 h-3.5 text-amber-600" />
               <span>Pedagogical Approach</span>
             </div>
 
@@ -189,27 +169,7 @@ export const DivisionDetailPage: React.FC<DivisionDetailPageProps> = ({ division
         </div>
       </section>
 
-      {/* 5. Bottom Navigation Bar Across Divisions */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 border-t border-slate-200">
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
-          <Link to="/academics" className="text-slate-600 hover:text-slate-900 font-semibold">
-            &larr; Back to Academics Overview
-          </Link>
-          <div className="flex items-center gap-4">
-            <Link to="/book-a-visit" className="text-amber-700 hover:text-amber-800 font-bold uppercase">
-              Schedule Tour
-            </Link>
-            <Link
-              to="/apply"
-              className="px-5 py-2.5 bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold uppercase rounded-xl transition-all shadow-xs"
-            >
-              Apply Online
-            </Link>
-          </div>
-        </div>
-      </section>
-
-    </div>
+    </section>
   );
 };
 
