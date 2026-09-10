@@ -105,7 +105,7 @@ export const App: React.FC = () => {
               <Route path="/admissions" element={<AdmissionsOverview />} />
               <Route path="/admissions/fees" element={<Fees />} />
               <Route path="/admissions/scholarships" element={<Scholarships />} />
-              <Route path="/apply" element={<Navigate to="/admissions" replace />} />
+              <Route path="/apply" element={<Apply />} />
               <Route path="/book-a-visit" element={<BookAVisit />} />
 
               {/* Journal & Editorial */}

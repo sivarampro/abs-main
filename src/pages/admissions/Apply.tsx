@@ -91,16 +91,18 @@ export const Apply: React.FC = () => {
   };
 
   return (
-    <section id="apply" className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24">
-      <div className="text-center max-w-xl mx-auto space-y-2 mb-12">
-        <span className="text-xs font-bold uppercase tracking-widest text-amber-700">Apply Now</span>
-        <h2 className="font-serif text-3xl font-bold text-slate-950">
-          Student Admission Application
-        </h2>
-        <p className="text-slate-600 text-sm">
-          Begin your application for the 2026–2027 academic session. All applications are reviewed holistically by our Admissions Committee.
-        </p>
-      </div>
+    <div className="space-y-16 sm:space-y-24 pb-24">
+      <PageHeader
+        badge="Online Application"
+        title="Student Admission Enquiry & Application"
+        tagline="Begin your application for the 2026–2027 academic session. All applications are reviewed holistically by our Admissions Committee."
+        breadcrumbs={[
+          { label: 'Admissions', href: '/admissions' },
+          { label: 'Apply Online' }
+        ]}
+      />
+
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {submissionResult ? (
           /* Success Receipt Card */
@@ -475,5 +477,6 @@ export const Apply: React.FC = () => {
         )}
 
       </section>
+    </div>
   );
 };
