@@ -438,6 +438,6 @@ export const Navbar: React.FC = () => {
           setIsSearchOpen(true);
         }}
       />
-    </>
+    </div>
   );
 };
