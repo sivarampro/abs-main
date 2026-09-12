@@ -9,12 +9,12 @@ export const CampusOverview: React.FC = () => {
       id: 'classrooms',
       title: 'Classrooms & Learning Spaces',
       desc: 'Step into our vibrant classrooms and academic environments designed to foster collaboration, intellectual curiosity, and focused learning.',
-      image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80',
+      image: '/images/campus/classroom_1.jpg',
       gallery: [
-        '/images/campus/classroom_1.jpg',
         '/images/campus/classroom_2.jpg',
         '/images/campus/classroom_3.jpg',
-        '/images/campus/classroom_4.jpg'
+        '/images/campus/classroom_4.jpg',
+        '/images/campus/classroom_5.jpg'
       ]
     },
     {
