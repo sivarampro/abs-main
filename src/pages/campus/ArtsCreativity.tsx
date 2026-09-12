@@ -28,7 +28,7 @@ export const ArtsCreativity: React.FC = () => {
   ];
 
   return (
-    <section id="arts-creativity" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
+    <section id="arts" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
       
 
       {/* Intro */}

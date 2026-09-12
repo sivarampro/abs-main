@@ -36,11 +36,13 @@ export const CampusOverview: React.FC = () => {
         <div className="bg-white/95 backdrop-blur-md rounded-2xl border border-slate-200 shadow-md p-2 sm:p-3">
           <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar scroll-smooth">
             {[
-              { id: 'learning-spaces', number: '01', title: 'Learning & Academic Spaces' },
-              { id: 'arts-creativity', number: '02', title: 'Arts & Creativity' },
-              { id: 'sports-recreation', number: '03', title: 'Sports & Recreation' },
-              { id: 'student-life-wellbeing', number: '04', title: 'Student Life & Wellbeing' },
-              { id: 'technology-innovation', number: '05', title: 'Tech & Innovation' },
+              { id: 'classrooms', number: '01', title: 'Classrooms & Learning Spaces' },
+              { id: 'labs-library', number: '02', title: 'Labs & Library' },
+              { id: 'sports', number: '03', title: 'Sports & Playgrounds' },
+              { id: 'arts', number: '04', title: 'Arts & Activity Spaces' },
+              { id: 'cafeteria', number: '05', title: 'Cafeteria & Dining' },
+              { id: 'transport', number: '06', title: 'Transport Facilities' },
+              { id: 'facilities', number: '07', title: 'Campus Facilities' },
             ].map((sec) => (
               <Link
                 key={sec.id}
@@ -156,39 +158,53 @@ export const CampusOverview: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
             {
-              title: 'Learning & Academic Spaces',
-              href: '/campus/learning-spaces',
-              desc: 'Smart classrooms, 45,000+ volume Central Library, and collegiate wet discovery laboratories.',
+              title: 'Classrooms & Learning Spaces',
+              href: '/campus/classrooms',
+              desc: 'Smart classrooms designed for interactive and collaborative learning.',
               image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=800&q=80',
-              tag: 'Academics & Labs'
+              tag: 'Academics'
             },
             {
-              title: 'Arts & Creativity',
-              href: '/campus/arts-creativity',
-              desc: '850-seat proscenium theatre, fine arts ateliers, ceramics studio, and orchestral suites.',
-              image: 'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=800&q=80',
-              tag: 'Visual & Performing Arts'
+              title: 'Labs & Library',
+              href: '/campus/labs-library',
+              desc: 'State-of-the-art laboratories and a 45,000+ volume Central Library.',
+              image: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80',
+              tag: 'Discovery'
             },
             {
-              title: 'Sports & Recreation',
-              href: '/campus/sports-recreation',
-              desc: '50m heated Olympic swimming pool, FIFA AstroTurf, and indoor timber-sprung court pavilion.',
+              title: 'Sports & Playgrounds',
+              href: '/campus/sports',
+              desc: 'Olympic-standard facilities, FIFA AstroTurf, and multi-sport indoor arenas.',
               image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80',
-              tag: 'Athletics Arena'
+              tag: 'Athletics'
             },
             {
-              title: 'Student Life & Wellbeing',
-              href: '/campus/student-life-wellbeing',
-              desc: '600-seat Dining Hall, House common rooms, pastoral counseling suites, and sensory gardens.',
+              title: 'Arts & Activity Spaces',
+              href: '/campus/arts',
+              desc: 'Dedicated spaces for visual arts, performing arts, and creative expression.',
+              image: 'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=800&q=80',
+              tag: 'Creativity'
+            },
+            {
+              title: 'Cafeteria & Dining',
+              href: '/campus/cafeteria',
+              desc: 'Spacious dining halls offering nutritious and diverse culinary options.',
               image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80',
-              tag: 'Community & Pastoral'
+              tag: 'Nutrition'
             },
             {
-              title: 'Technology & Innovation',
-              href: '/campus/technology-innovation',
-              desc: 'Robotics & AI incubator, 3D printing maker space, GPU data labs, and immersive VR studios.',
+              title: 'Transport Facilities',
+              href: '/campus/transport',
+              desc: 'Safe, reliable, and extensive fleet of school buses covering major routes.',
               image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80',
-              tag: 'Robotics & AI'
+              tag: 'Logistics'
+            },
+            {
+              title: 'Campus Facilities',
+              href: '/campus/facilities',
+              desc: 'Medical rooms, security infrastructure, and core campus amenities.',
+              image: 'https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=800&q=80',
+              tag: 'Infrastructure'
             }
           ].map((domain, i) => (
             <Link

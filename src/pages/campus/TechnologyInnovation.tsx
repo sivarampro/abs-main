@@ -28,7 +28,7 @@ export const TechnologyInnovation: React.FC = () => {
   ];
 
   return (
-    <section id="technology-innovation" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
+    <section id="labs-library" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
       
 
       {/* Intro */}

@@ -28,7 +28,7 @@ export const SportsRecreation: React.FC = () => {
   ];
 
   return (
-    <section id="sports-recreation" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
+    <section id="sports" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
       
 
       {/* Intro */}

@@ -28,7 +28,7 @@ export const StudentLifeSpaces: React.FC = () => {
   ];
 
   return (
-    <section id="student-life-wellbeing" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
+    <section id="cafeteria" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
       
 
       {/* Intro */}

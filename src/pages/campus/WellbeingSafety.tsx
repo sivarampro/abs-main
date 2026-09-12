@@ -28,7 +28,7 @@ export const WellbeingSafety: React.FC = () => {
   ];
 
   return (
-    <section id="wellbeing-safety" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
+    <section id="facilities" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
       
 
       {/* Intro */}
