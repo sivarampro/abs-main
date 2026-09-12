@@ -50,7 +50,7 @@ export const CampusOverview: React.FC = () => {
   ];
 
   return (
-    <div className="space-y-24 sm:space-y-32 pb-24">
+    <div className="pb-24">
       
       <PageHeader
         badge="25-Acre Masterplan"
@@ -68,39 +68,37 @@ export const CampusOverview: React.FC = () => {
         }
       />
 
-      {/* Campus Overview Image */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16">
-        <div className="rounded-3xl overflow-hidden bg-slate-100 shadow-xl border border-slate-200">
-          <img
-            src="https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=1600&q=80"
-            alt="Campus Overview"
-            className="w-full h-auto max-h-[700px] object-cover"
-          />
-        </div>
-      </section>
-
       {/* Topics */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
-        {topics.map((topic, idx) => (
-          <div key={idx} id={topic.id} className="space-y-8 scroll-mt-32">
-            <div className="text-center max-w-3xl mx-auto space-y-4">
-              <h3 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
-                {topic.title}
-              </h3>
-              <p className="text-slate-600 sm:text-lg leading-relaxed">
-                {topic.desc}
-              </p>
-            </div>
-            <div className="rounded-3xl overflow-hidden bg-slate-100 shadow-xl border border-slate-200">
-              <img
-                src={topic.image}
-                alt={topic.title}
-                className="w-full h-auto max-h-[600px] object-cover"
-              />
-            </div>
-          </div>
-        ))}
-      </section>
+      <div className="flex flex-col">
+        {topics.map((topic, idx) => {
+          const isEven = idx % 2 === 0;
+          return (
+            <section 
+              key={idx} 
+              id={topic.id} 
+              className={`py-20 sm:py-28 ${isEven ? 'bg-white' : 'bg-slate-50 border-y border-slate-200'} scroll-mt-20`}
+            >
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
+                <div className="text-center max-w-3xl mx-auto space-y-4">
+                  <h3 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+                    {topic.title}
+                  </h3>
+                  <p className="text-slate-600 sm:text-lg leading-relaxed">
+                    {topic.desc}
+                  </p>
+                </div>
+                <div className="rounded-3xl overflow-hidden bg-slate-100 shadow-xl border border-slate-200">
+                  <img
+                    src={topic.image}
+                    alt={topic.title}
+                    className="w-full h-auto max-h-[600px] sm:max-h-[700px] object-cover"
+                  />
+                </div>
+              </div>
+            </section>
+          );
+        })}
+      </div>
 
     </div>
   );
