@@ -1,24 +1,61 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { PageHeader } from '../../components/layout/PageHeader';
-import { campusStats } from '../../data/campus';
-import { Sun, ArrowRight, Calendar } from 'lucide-react';
-import { Classrooms } from './Classrooms';
-import { LabsLibrary } from './LabsLibrary';
-import { SportsPlaygrounds } from './SportsPlaygrounds';
-import { ArtsActivity } from './ArtsActivity';
-import { CafeteriaDining } from './CafeteriaDining';
-import { TransportFacilities } from './TransportFacilities';
-import { CampusFacilities } from './CampusFacilities';
+import { Calendar } from 'lucide-react';
 
 export const CampusOverview: React.FC = () => {
+  const topics = [
+    {
+      id: 'classrooms',
+      title: 'Classrooms & Learning Spaces',
+      desc: 'Step into our vibrant classrooms and academic environments designed to foster collaboration, intellectual curiosity, and focused learning.',
+      image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80'
+    },
+    {
+      id: 'labs-library',
+      title: 'Labs & Library',
+      desc: 'State-of-the-art laboratories and a 45,000+ volume Central Library that inspire discovery, research, and a lifelong love of reading.',
+      image: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=80'
+    },
+    {
+      id: 'sports',
+      title: 'Sports & Playgrounds',
+      desc: 'Olympic-standard facilities, FIFA AstroTurf, and multi-sport arenas that encourage physical fitness, teamwork, and healthy competition.',
+      image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80'
+    },
+    {
+      id: 'arts',
+      title: 'Arts & Activity Spaces',
+      desc: 'Dedicated spaces for visual arts, performing arts, and creative expression to nurture every student\'s artistic potential.',
+      image: 'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=1200&q=80'
+    },
+    {
+      id: 'cafeteria',
+      title: 'Cafeteria & Dining',
+      desc: 'Spacious, hygienic dining halls offering nutritious and diverse culinary options in a comfortable communal setting.',
+      image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80'
+    },
+    {
+      id: 'transport',
+      title: 'Transport Facilities',
+      desc: 'A safe, reliable, and extensive fleet of GPS-enabled school buses providing seamless connectivity across major routes.',
+      image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80'
+    },
+    {
+      id: 'facilities',
+      title: 'Campus Facilities',
+      desc: 'Comprehensive infrastructure including round-the-clock medical rooms, advanced security systems, and core amenities to ensure a safe environment.',
+      image: 'https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=1200&q=80'
+    }
+  ];
+
   return (
-    <div className="space-y-20 sm:space-y-28 pb-24">
+    <div className="space-y-24 sm:space-y-32 pb-24">
       
       <PageHeader
         badge="25-Acre Masterplan"
-        title="An Architectural Masterpiece for Modern Learning"
-        tagline="Explore sustainable, light-filled educational pavilions, specialized research laboratories, and Olympic-grade athletic grounds."
+        title="Campus Overview"
+        tagline="Explore our 25-acre sustainable, light-filled educational pavilions, specialized research laboratories, and Olympic-grade athletic grounds designed as an architectural masterpiece for modern learning."
         breadcrumbs={[{ label: 'Campus Overview' }]}
         actions={
           <Link
@@ -31,163 +68,39 @@ export const CampusOverview: React.FC = () => {
         }
       />
 
-      {/* Sticky Table of Contents Navigation */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 sm:-mt-14 relative z-10">
-        <div className="bg-white/95 backdrop-blur-md rounded-2xl border border-slate-200 shadow-md p-2 sm:p-3">
-          <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar scroll-smooth">
-            {[
-              { id: 'classrooms', number: '01', title: 'Classrooms & Learning Spaces' },
-              { id: 'labs-library', number: '02', title: 'Labs & Library' },
-              { id: 'sports', number: '03', title: 'Sports & Playgrounds' },
-              { id: 'arts', number: '04', title: 'Arts & Activity Spaces' },
-              { id: 'cafeteria', number: '05', title: 'Cafeteria & Dining' },
-              { id: 'transport', number: '06', title: 'Transport Facilities' },
-              { id: 'facilities', number: '07', title: 'Campus Facilities' },
-            ].map((sec) => (
-              <Link
-                key={sec.id}
-                to={`/campus#${sec.id}`}
-                className="flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold whitespace-nowrap bg-slate-50 hover:bg-amber-50 hover:text-amber-900 text-slate-700 transition-all border border-slate-200/80 hover:border-amber-300 flex-shrink-0"
-              >
-                <span className="w-5 h-5 rounded-full bg-amber-400/20 text-amber-800 text-[10px] font-bold flex items-center justify-center">
-                  {sec.number}
-                </span>
-                <span>{sec.title}</span>
-              </Link>
-            ))}
-          </div>
+      {/* Campus Overview Image */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12 sm:mt-16">
+        <div className="rounded-3xl overflow-hidden bg-slate-100 shadow-xl border border-slate-200">
+          <img
+            src="https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=1600&q=80"
+            alt="Campus Overview"
+            className="w-full h-auto max-h-[700px] object-cover"
+          />
         </div>
-      </div>
+      </section>
 
-      {/* 1. Campus Stats Row */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-          {campusStats.map((stat, idx) => (
-            <div
-              key={idx}
-              className="p-6 sm:p-8 rounded-3xl bg-white border border-slate-200 shadow-card text-center space-y-2"
-            >
-              <div className="font-serif text-3xl sm:text-4xl font-bold text-slate-950">
-                {stat.value}
-              </div>
-              <div className="text-xs font-bold uppercase tracking-wider text-slate-800">
-                {stat.label}
-              </div>
-              <p className="text-[11px] text-slate-500">{stat.description}</p>
+      {/* Topics */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-24">
+        {topics.map((topic, idx) => (
+          <div key={idx} id={topic.id} className="space-y-8 scroll-mt-32">
+            <div className="text-center max-w-3xl mx-auto space-y-4">
+              <h3 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+                {topic.title}
+              </h3>
+              <p className="text-slate-600 sm:text-lg leading-relaxed">
+                {topic.desc}
+              </p>
             </div>
-          ))}
-        </div>
+            <div className="rounded-3xl overflow-hidden bg-slate-100 shadow-xl border border-slate-200">
+              <img
+                src={topic.image}
+                alt={topic.title}
+                className="w-full h-auto max-h-[600px] object-cover"
+              />
+            </div>
+          </div>
+        ))}
       </section>
-
-      {/* 4. Specialized Campus Domains Grid */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-bold uppercase tracking-widest text-amber-700">Campus Overview</span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-950">
-            Explore Campus by Domain
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-600">
-            Discover each specialized zone tailored for learning, arts, athletics, community, wellbeing, and innovation.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {[
-            {
-              title: 'Classrooms & Learning Spaces',
-              href: '/campus/classrooms',
-              desc: 'Smart classrooms designed for interactive and collaborative learning.',
-              image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=800&q=80',
-              tag: 'Academics'
-            },
-            {
-              title: 'Labs & Library',
-              href: '/campus/labs-library',
-              desc: 'State-of-the-art laboratories and a 45,000+ volume Central Library.',
-              image: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=800&q=80',
-              tag: 'Discovery'
-            },
-            {
-              title: 'Sports & Playgrounds',
-              href: '/campus/sports',
-              desc: 'Olympic-standard facilities, FIFA AstroTurf, and multi-sport indoor arenas.',
-              image: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800&q=80',
-              tag: 'Athletics'
-            },
-            {
-              title: 'Arts & Activity Spaces',
-              href: '/campus/arts',
-              desc: 'Dedicated spaces for visual arts, performing arts, and creative expression.',
-              image: 'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=800&q=80',
-              tag: 'Creativity'
-            },
-            {
-              title: 'Cafeteria & Dining',
-              href: '/campus/cafeteria',
-              desc: 'Spacious dining halls offering nutritious and diverse culinary options.',
-              image: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80',
-              tag: 'Nutrition'
-            },
-            {
-              title: 'Transport Facilities',
-              href: '/campus/transport',
-              desc: 'Safe, reliable, and extensive fleet of school buses covering major routes.',
-              image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=800&q=80',
-              tag: 'Logistics'
-            },
-            {
-              title: 'Campus Facilities',
-              href: '/campus/facilities',
-              desc: 'Medical rooms, security infrastructure, and core campus amenities.',
-              image: 'https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&w=800&q=80',
-              tag: 'Infrastructure'
-            }
-          ].map((domain, i) => (
-            <Link
-              key={i}
-              to={`/campus#${domain.href.split('/').pop()}`}
-              className="group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-card hover:shadow-card-hover transition-all flex flex-col justify-between"
-            >
-              <div className="relative aspect-[16/10] overflow-hidden">
-                <img
-                  src={domain.image}
-                  alt={domain.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute top-3 left-3">
-                  <span className="px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-xs">
-                    {domain.tag}
-                  </span>
-                </div>
-              </div>
-
-              <div className="p-6 space-y-2 flex-1 flex flex-col justify-between">
-                <div>
-                  <h3 className="font-serif text-xl font-bold text-slate-950 group-hover:text-amber-700 transition-colors">
-                    {domain.title}
-                  </h3>
-                  <p className="text-xs text-slate-600 leading-relaxed mt-1">
-                    {domain.desc}
-                  </p>
-                </div>
-                <div className="pt-4 flex items-center gap-1 text-xs font-bold text-amber-700 group-hover:text-amber-800">
-                  <span>Explore Facilities</span>
-                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      {/* Render Subsections */}
-      <Classrooms />
-      <LabsLibrary />
-      <SportsPlaygrounds />
-      <ArtsActivity />
-      <CafeteriaDining />
-      <TransportFacilities />
-      <CampusFacilities />
 
     </div>
   );
