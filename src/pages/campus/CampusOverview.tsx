@@ -101,6 +101,32 @@ export const CampusOverview: React.FC = () => {
         }
       />
 
+      {/* Campus Key Stats Bar */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div className="bg-white p-4 sm:p-5 rounded-2xl border border-amber-200/80 shadow-xs text-center flex flex-col items-center justify-center hover:shadow-md transition-shadow">
+            <span className="font-serif text-2xl sm:text-3xl font-bold text-amber-600 block">25+</span>
+            <span className="text-[11px] font-bold text-slate-800 uppercase tracking-wider block mt-1">Acres Campus</span>
+          </div>
+          <div className="bg-white p-4 sm:p-5 rounded-2xl border border-amber-200/80 shadow-xs text-center flex flex-col items-center justify-center hover:shadow-md transition-shadow">
+            <span className="font-serif text-2xl sm:text-3xl font-bold text-amber-600 block">14</span>
+            <span className="text-[11px] font-bold text-slate-800 uppercase tracking-wider block mt-1">Sports Arenas</span>
+          </div>
+          <div className="bg-white p-4 sm:p-5 rounded-2xl border border-amber-200/80 shadow-xs text-center flex flex-col items-center justify-center hover:shadow-md transition-shadow">
+            <span className="font-serif text-2xl sm:text-3xl font-bold text-amber-600 block">45,000+</span>
+            <span className="text-[11px] font-bold text-slate-800 uppercase tracking-wider block mt-1">Library Books</span>
+          </div>
+          <div className="bg-white p-4 sm:p-5 rounded-2xl border border-amber-200/80 shadow-xs text-center flex flex-col items-center justify-center hover:shadow-md transition-shadow">
+            <span className="font-serif text-2xl sm:text-3xl font-bold text-amber-600 block">60+</span>
+            <span className="text-[11px] font-bold text-slate-800 uppercase tracking-wider block mt-1">Laboratories</span>
+          </div>
+          <div className="col-span-2 md:col-span-1 bg-white p-4 sm:p-5 rounded-2xl border border-amber-200/80 shadow-xs text-center flex flex-col items-center justify-center hover:shadow-md transition-shadow">
+            <span className="font-serif text-2xl sm:text-3xl font-bold text-amber-600 block">100%</span>
+            <span className="text-[11px] font-bold text-slate-800 uppercase tracking-wider block mt-1">CCTV & Safety</span>
+          </div>
+        </div>
+      </div>
+
       {/* Topics */}
       <div className="flex flex-col">
         {topics.map((topic, idx) => {
