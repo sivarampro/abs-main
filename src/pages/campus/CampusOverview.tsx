@@ -46,9 +46,9 @@ export const CampusOverview: React.FC = () => {
       title: 'Arts & Activity Spaces',
       desc: 'Dedicated spaces for visual arts, performing arts, and creative expression to nurture every student\'s artistic potential.',
       scrollGallery: [
-        'https://images.unsplash.com/photo-1513364776144-60967b0f800f?auto=format&fit=crop&w=1200&q=80',
-        'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1200&q=80',
-        'https://images.unsplash.com/photo-1507676184212-d03ab07a01bf?auto=format&fit=crop&w=1200&q=80'
+        '/images/campus/arts_1.jpg',
+        '/images/campus/arts_2.jpg',
+        '/images/campus/arts_3.jpg'
       ]
     },
     {
