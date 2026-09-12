@@ -20,11 +20,13 @@ export const navigationData: NavItem[] = [
     label: 'Campus',
     children: [
       { label: 'Campus Overview', href: '/campus' },
-      { label: 'Learning & Academic Spaces', href: '/campus#learning-spaces' },
-      { label: 'Arts & Creativity', href: '/campus#arts-creativity' },
-      { label: 'Sports & Recreation', href: '/campus#sports-recreation' },
-      { label: 'Student Life & Wellbeing', href: '/campus#student-life-wellbeing' },
-      { label: 'Technology & Innovation', href: '/campus#technology-innovation' },
+      { label: 'Classrooms & Learning Spaces', href: '/campus#classrooms' },
+      { label: 'Labs & Library', href: '/campus#labs-library' },
+      { label: 'Sports & Playgrounds', href: '/campus#sports' },
+      { label: 'Arts & Activity Spaces', href: '/campus#arts' },
+      { label: 'Cafeteria & Dining', href: '/campus#cafeteria' },
+      { label: 'Transport Facilities', href: '/campus#transport' },
+      { label: 'Campus Facilities', href: '/campus#facilities' },
     ]
   },
   {
