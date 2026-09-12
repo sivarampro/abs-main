@@ -66,9 +66,7 @@ export const CampusOverview: React.FC = () => {
       title: 'Transport Facilities',
       desc: 'A safe, reliable, and extensive fleet of GPS-enabled school buses providing seamless connectivity across major routes.',
       scrollGallery: [
-        'https://images.unsplash.com/photo-1557223562-6c77ef161f58?auto=format&fit=crop&w=1200&q=80',
-        'https://images.unsplash.com/photo-1629853965902-181180b7eef7?auto=format&fit=crop&w=1200&q=80',
-        'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80'
+        '/images/campus/transport_1.jpg'
       ]
     },
     {
