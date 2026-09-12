@@ -23,9 +23,10 @@ export const CampusOverview: React.FC = () => {
       title: 'Labs & Library',
       desc: 'State-of-the-art laboratories and a 45,000+ volume Central Library that inspire discovery, research, and a lifelong love of reading.',
       scrollGallery: [
-        'https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=1200&q=80',
-        'https://images.unsplash.com/photo-1579165466741-7f35e4755660?auto=format&fit=crop&w=1200&q=80',
-        'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80'
+        '/images/campus/lab_1.jpg',
+        '/images/campus/lab_2.jpg',
+        '/images/campus/lab_3.jpg',
+        '/images/campus/lab_4.jpg'
       ]
     },
     {
