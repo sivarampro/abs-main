@@ -74,45 +74,7 @@ export const Classrooms: React.FC = () => {
         ))}
       </section>
 
-      {/* Learning & Academic Spaces Masonry Gallery */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
-        <div className="text-center space-y-4 mb-10">
-          <h3 className="font-serif text-2xl sm:text-3xl font-bold text-slate-900 tracking-tight">
-            Learning Environments in Action
-          </h3>
-          <p className="text-slate-600 max-w-2xl mx-auto text-sm sm:text-base">
-            Step into our vibrant classrooms and academic environments designed to foster collaboration, intellectual curiosity, and focused learning.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-[200px] sm:auto-rows-[250px]">
-          {/* Image 1: Large Feature */}
-          <div className="md:col-span-8 md:row-span-2 rounded-2xl overflow-hidden group relative bg-slate-100">
-            <img src="/images/learning-spaces/space-1.jpg" alt="Classroom learning environment" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
-          {/* Image 2 */}
-          <div className="md:col-span-4 rounded-2xl overflow-hidden group relative bg-slate-100">
-            <img src="/images/learning-spaces/space-2.jpg" alt="Interactive learning space" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
-          {/* Image 3 */}
-          <div className="md:col-span-4 rounded-2xl overflow-hidden group relative bg-slate-100">
-            <img src="/images/learning-spaces/space-3.jpg" alt="Academic engagement" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
-          {/* Image 4 */}
-          <div className="md:col-span-6 rounded-2xl overflow-hidden group relative bg-slate-100">
-            <img src="/images/learning-spaces/space-4.jpg" alt="Digital classroom presentation" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
-          {/* Image 5 */}
-          <div className="md:col-span-6 rounded-2xl overflow-hidden group relative bg-slate-100">
-            <img src="/images/learning-spaces/space-5.jpg" alt="Smart classroom learning" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          </div>
-        </div>
-      </section>
+
       
     </section>
   );
