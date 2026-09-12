@@ -41,12 +41,12 @@ export const ScrollStackedImages: React.FC<ScrollStackedImagesProps> = ({ images
       // 100vh for the container itself, plus 80vh for each additional image to scroll through.
       style={{ height: `${(images.length - 1) * 80 + 100}vh` }} 
     >
-      {/* Sticky Container */}
-      <div className="sticky top-24 w-full flex flex-col items-center space-y-8">
+      {/* Sticky Container - exactly sized to viewport minus top offset to guarantee bottom whitespace */}
+      <div className="sticky top-24 w-full h-[calc(100vh-120px)] flex flex-col items-center space-y-4 sm:space-y-6 pb-6">
         
         {/* Title and Description - Always visible and sticky */}
         {(title || desc) && (
-          <div className="text-center max-w-3xl mx-auto space-y-4 px-4 pt-4">
+          <div className="text-center max-w-3xl mx-auto space-y-3 px-4 shrink-0">
             {title && (
               <h3 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
                 {title}
@@ -60,8 +60,8 @@ export const ScrollStackedImages: React.FC<ScrollStackedImagesProps> = ({ images
           </div>
         )}
 
-        {/* Images Stack Area */}
-        <div className="relative w-full h-[55vh] sm:h-[65vh] flex items-center justify-center overflow-hidden rounded-3xl bg-slate-100 shadow-xl border border-slate-200">
+        {/* Images Stack Area - Flexibly takes remaining space, guaranteeing it never hits bottom of screen */}
+        <div className="relative w-full flex-1 min-h-0 flex items-center justify-center overflow-hidden rounded-3xl bg-slate-100 shadow-xl border border-slate-200">
           {images.map((img, index) => {
             const step = 1 / (images.length - 1); 
             const start = index === 0 ? -1 : (index - 1) * step; // First image is always active initially
