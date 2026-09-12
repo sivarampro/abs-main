@@ -82,7 +82,7 @@ export const CampusOverview: React.FC = () => {
       {/* 4. Specialized Campus Domains Grid */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-bold uppercase tracking-widest text-amber-700">Dedicated Zones</span>
+          <span className="text-xs font-bold uppercase tracking-widest text-amber-700">Campus Overview</span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-950">
             Explore Campus by Domain
           </h2>
