@@ -102,9 +102,12 @@ export const CampusOverview: React.FC = () => {
                 </div>
                 {/* Additional Gallery Images */}
                 {topic.gallery && (
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 pt-4">
+                  <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 sm:gap-6 pt-4 pb-6 px-1" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                    <style dangerouslySetInnerHTML={{__html: `
+                      div::-webkit-scrollbar { display: none; }
+                    `}} />
                     {topic.gallery.map((img, i) => (
-                      <div key={i} className="rounded-2xl overflow-hidden shadow-lg border border-slate-200">
+                      <div key={i} className="snap-center shrink-0 w-[85%] sm:w-[45%] lg:w-[35%] rounded-2xl overflow-hidden shadow-lg border border-slate-200">
                         <img 
                           src={img} 
                           alt={`${topic.title} ${i + 1}`} 
