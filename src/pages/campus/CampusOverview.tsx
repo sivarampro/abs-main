@@ -9,7 +9,13 @@ export const CampusOverview: React.FC = () => {
       id: 'classrooms',
       title: 'Classrooms & Learning Spaces',
       desc: 'Step into our vibrant classrooms and academic environments designed to foster collaboration, intellectual curiosity, and focused learning.',
-      image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80'
+      image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80',
+      gallery: [
+        '/images/campus/classroom_1.jpg',
+        '/images/campus/classroom_2.jpg',
+        '/images/campus/classroom_3.jpg',
+        '/images/campus/classroom_4.jpg'
+      ]
     },
     {
       id: 'labs-library',
@@ -94,6 +100,20 @@ export const CampusOverview: React.FC = () => {
                     className="w-full h-auto max-h-[600px] sm:max-h-[700px] object-cover"
                   />
                 </div>
+                {/* Additional Gallery Images */}
+                {topic.gallery && (
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 pt-4">
+                    {topic.gallery.map((img, i) => (
+                      <div key={i} className="rounded-2xl overflow-hidden shadow-lg border border-slate-200">
+                        <img 
+                          src={img} 
+                          alt={`${topic.title} ${i + 1}`} 
+                          className="w-full h-64 sm:h-80 object-cover hover:scale-105 transition-transform duration-500"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             </section>
           );
