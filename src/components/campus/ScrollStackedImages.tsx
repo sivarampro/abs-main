@@ -42,7 +42,7 @@ export const ScrollStackedImages: React.FC<ScrollStackedImagesProps> = ({ images
       style={{ height: `${(images.length - 1) * 80 + 100}vh` }} 
     >
       {/* Sticky Container - exactly sized to viewport minus top offset to guarantee bottom whitespace */}
-      <div className="sticky top-24 w-full h-[calc(100vh-120px)] flex flex-col items-center space-y-4 sm:space-y-6 pb-6">
+      <div className="sticky top-32 w-full h-[calc(100vh-160px)] flex flex-col items-center space-y-4 sm:space-y-6 pb-6">
         
         {/* Title and Description - Always visible and sticky */}
         {(title || desc) && (
@@ -61,7 +61,7 @@ export const ScrollStackedImages: React.FC<ScrollStackedImagesProps> = ({ images
         )}
 
         {/* Images Stack Area - Flexibly takes remaining space, guaranteeing it never hits bottom of screen */}
-        <div className="relative w-full flex-1 min-h-0 flex items-center justify-center overflow-hidden rounded-3xl bg-slate-100 shadow-xl border border-slate-200">
+        <div className="relative w-full max-w-5xl mx-auto flex-1 min-h-0 flex items-center justify-center overflow-hidden rounded-3xl bg-slate-100 shadow-xl border border-slate-200">
           {images.map((img, index) => {
             const step = 1 / (images.length - 1); 
             const start = index === 0 ? -1 : (index - 1) * step; // First image is always active initially
