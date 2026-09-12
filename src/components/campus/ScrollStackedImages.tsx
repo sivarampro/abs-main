@@ -63,45 +63,51 @@ export const ScrollStackedImages: React.FC<ScrollStackedImagesProps> = ({ images
         {/* Images Stack Area */}
         <div className="relative w-full h-[55vh] sm:h-[65vh] flex items-center justify-center overflow-hidden rounded-3xl bg-slate-100 shadow-xl border border-slate-200">
           {images.map((img, index) => {
-            // If there are 5 images, there are 4 transition steps.
             const step = 1 / (images.length - 1); 
-            const start = (index - 1) * step; 
+            const start = index === 0 ? -1 : (index - 1) * step; // First image is always active initially
+            const end = start + step;
             
-            let translateX = '0%';
-            let zIndex = index;
+            let translateX = 0;
+            let scale = 1;
             let opacity = 1;
+            let zIndex = index;
 
-            if (index === 0) {
-              // First image is always there initially
-              translateX = '0%';
-              zIndex = 0;
+            if (index === 0 && scrollProgress < step) {
+              // First image is fully visible before scrolling past step 1
+              translateX = 0;
+              scale = 1;
+              opacity = 1;
+              zIndex = 20;
+            } else if (scrollProgress < start) {
+              // Image is waiting to enter from the left
+              translateX = -40;
+              scale = 0.96;
+              opacity = 0;
+              zIndex = index;
+            } else if (scrollProgress >= start && scrollProgress < end) {
+              // Image is actively entering
+              const enterFraction = Math.min(Math.max((scrollProgress - start) / (step * 0.4), 0), 1);
+              translateX = -(1 - enterFraction) * 40;
+              scale = 1;
+              opacity = 1;
+              zIndex = index + 20;
             } else {
-               // Subsequent images slide in from left to right (start -100%, end 0%)
-               if (scrollProgress < start) {
-                  // Not reached yet, wait on the far left
-                  translateX = '-100%';
-                  zIndex = index + 10;
-               } else if (scrollProgress >= start && scrollProgress <= start + step) {
-                  // Currently sliding in
-                  const enterFraction = (scrollProgress - start) / step; // 0 to 1
-                  translateX = `-${100 - (enterFraction * 100)}%`;
-                  zIndex = index + 10;
-               } else {
-                  // Fully entered, sits in place
-                  translateX = '0%';
-                  zIndex = index + 10;
-               }
+              // Image has been passed and is stacked behind
+              const cardsAfter = Math.floor(scrollProgress / step) - index + 1;
+              translateX = cardsAfter * 10;
+              scale = Math.max(1 - cardsAfter * 0.03, 0.92);
+              opacity = Math.max(1 - cardsAfter * 0.25, 0.4);
+              zIndex = index + 10;
             }
             
             return (
               <div
                 key={index}
-                className="absolute inset-0 w-full h-full flex items-center justify-center"
+                className="absolute inset-0 w-full h-full flex items-center justify-center transition-all duration-500 ease-out"
                 style={{
-                  transform: `translateX(${translateX})`,
+                  transform: `translateX(${translateX}px) scale(${scale})`,
                   opacity: opacity,
                   zIndex: zIndex,
-                  willChange: 'transform'
                 }}
               >
                 <img
