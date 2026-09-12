@@ -69,34 +69,26 @@ export const ScrollStackedImages: React.FC<ScrollStackedImagesProps> = ({ images
             
             let translateX = '0%';
             let zIndex = index;
-            let scale = 1;
             let opacity = 1;
 
             if (index === 0) {
-              // First image is always there initially, then scales down as others cover it
+              // First image is always there initially
               translateX = '0%';
-              scale = Math.max(1 - scrollProgress * 0.05, 0.9);
-              opacity = Math.max(1 - scrollProgress * 0.5, 0.4);
               zIndex = 0;
             } else {
                // Subsequent images slide in from left to right (start -100%, end 0%)
                if (scrollProgress < start) {
                   // Not reached yet, wait on the far left
                   translateX = '-100%';
-                  scale = 0.95;
                   zIndex = index + 10;
                } else if (scrollProgress >= start && scrollProgress <= start + step) {
                   // Currently sliding in
                   const enterFraction = (scrollProgress - start) / step; // 0 to 1
                   translateX = `-${100 - (enterFraction * 100)}%`;
-                  scale = 0.95 + (0.05 * enterFraction);
                   zIndex = index + 10;
                } else {
-                  // Fully entered, sits in place, scales down slightly if covered by next
+                  // Fully entered, sits in place
                   translateX = '0%';
-                  const pastFraction = scrollProgress - (start + step);
-                  scale = Math.max(1 - pastFraction * 0.05, 0.95);
-                  opacity = Math.max(1 - pastFraction * 0.5, 0.4);
                   zIndex = index + 10;
                }
             }
@@ -104,12 +96,12 @@ export const ScrollStackedImages: React.FC<ScrollStackedImagesProps> = ({ images
             return (
               <div
                 key={index}
-                className="absolute inset-0 w-full h-full flex items-center justify-center origin-center"
+                className="absolute inset-0 w-full h-full flex items-center justify-center"
                 style={{
-                  transform: `translateX(${translateX}) scale(${scale})`,
+                  transform: `translateX(${translateX})`,
                   opacity: opacity,
                   zIndex: zIndex,
-                  willChange: 'transform, opacity'
+                  willChange: 'transform'
                 }}
               >
                 <img
