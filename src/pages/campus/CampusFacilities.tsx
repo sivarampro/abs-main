@@ -36,46 +36,21 @@ export const CampusFacilities: React.FC = () => {
       {/* Facilities List */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {safetyPillars.map((facility, idx) => (
-          <div
-            key={idx}
-            className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-card hover:shadow-card-hover transition-all"
-          >
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 items-center">
-              <div className={`lg:col-span-6 relative aspect-[4/3] ${idx % 2 === 1 ? 'lg:order-2' : ''}`}>
-                <img
-                  src={facility.image}
-                  alt={facility.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-slate-950/80 text-white backdrop-blur-xs">
-                    {facility.tag}
-                  </span>
-                </div>
-              </div>
-
-              <div className={`lg:col-span-6 p-8 sm:p-12 space-y-6 ${idx % 2 === 1 ? 'lg:order-1' : ''}`}>
-                <div className="space-y-2">
-                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-slate-950">
-                    {facility.title}
-                  </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed font-light">
-                    {facility.desc}
-                  </p>
-                </div>
-
-                <div className="space-y-2.5 pt-2">
-                  <span className="text-xs font-bold uppercase tracking-wider text-slate-900 block">Protocols & Standards:</span>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {facility.specs.map((spec, i) => (
-                      <div key={i} className="flex items-center gap-2 text-xs text-slate-700 bg-slate-50 p-2.5 rounded-xl border border-slate-200/80">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-amber-600 flex-shrink-0" />
-                        <span>{spec}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
+          <div key={idx} className="space-y-8">
+            <div className="text-center max-w-3xl mx-auto space-y-4">
+              <h3 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+                {facility.title}
+              </h3>
+              <p className="text-slate-600 sm:text-lg leading-relaxed">
+                {facility.desc}
+              </p>
+            </div>
+            <div className="rounded-3xl overflow-hidden bg-slate-100 shadow-sm border border-slate-200">
+              <img
+                src={facility.image}
+                alt={facility.title}
+                className="w-full h-auto max-h-[600px] object-cover"
+              />
             </div>
           </div>
         ))}
