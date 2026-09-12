@@ -60,8 +60,13 @@ export const ScrollStackedImages: React.FC<ScrollStackedImagesProps> = ({ images
           </div>
         )}
 
-        {/* Images Stack Area - Flexibly takes remaining space, guaranteeing it never hits bottom of screen */}
-        <div className="relative w-full max-w-5xl mx-auto flex-1 min-h-0 flex items-center justify-center overflow-hidden rounded-3xl bg-slate-100 shadow-xl border border-slate-200">
+        {/* Images Stack Area - Locked to 3:2 aspect ratio of the original photos to prevent cropping AND white space */}
+        <div 
+          className="relative w-full aspect-[3/2] mx-auto overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-300"
+          style={{
+            maxWidth: 'min(100%, calc((100vh - 280px) * (3 / 2)))'
+          }}
+        >
           {images.map((img, index) => {
             const step = 1 / (images.length - 1); 
             const start = index === 0 ? -1 : (index - 1) * step; // First image is always active initially
@@ -113,7 +118,7 @@ export const ScrollStackedImages: React.FC<ScrollStackedImagesProps> = ({ images
                 <img
                   src={img}
                   alt={`Classroom ${index + 1}`}
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
             );
