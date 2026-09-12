@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { PageHeader } from '../../components/layout/PageHeader';
 import { Calendar } from 'lucide-react';
+import { ScrollStackedImages } from '../../components/campus/ScrollStackedImages';
 
 export const CampusOverview: React.FC = () => {
   const topics = [
@@ -9,8 +10,8 @@ export const CampusOverview: React.FC = () => {
       id: 'classrooms',
       title: 'Classrooms & Learning Spaces',
       desc: 'Step into our vibrant classrooms and academic environments designed to foster collaboration, intellectual curiosity, and focused learning.',
-      image: '/images/campus/classroom_1.jpg',
-      gallery: [
+      scrollGallery: [
+        '/images/campus/classroom_1.jpg',
         '/images/campus/classroom_2.jpg',
         '/images/campus/classroom_3.jpg',
         '/images/campus/classroom_4.jpg',
@@ -93,28 +94,15 @@ export const CampusOverview: React.FC = () => {
                     {topic.desc}
                   </p>
                 </div>
-                <div className="rounded-3xl overflow-hidden bg-slate-100 shadow-xl border border-slate-200">
-                  <img
-                    src={topic.image}
-                    alt={topic.title}
-                    className="w-full h-auto max-h-[600px] sm:max-h-[700px] object-cover"
-                  />
-                </div>
-                {/* Additional Gallery Images */}
-                {topic.gallery && (
-                  <div className="flex overflow-x-auto snap-x snap-mandatory gap-4 sm:gap-6 pt-4 pb-6 px-1" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-                    <style dangerouslySetInnerHTML={{__html: `
-                      div::-webkit-scrollbar { display: none; }
-                    `}} />
-                    {topic.gallery.map((img, i) => (
-                      <div key={i} className="snap-center shrink-0 w-[85%] sm:w-[45%] lg:w-[35%] rounded-2xl overflow-hidden shadow-lg border border-slate-200">
-                        <img 
-                          src={img} 
-                          alt={`${topic.title} ${i + 1}`} 
-                          className="w-full h-64 sm:h-80 object-cover hover:scale-105 transition-transform duration-500"
-                        />
-                      </div>
-                    ))}
+                {topic.scrollGallery ? (
+                  <ScrollStackedImages images={topic.scrollGallery} />
+                ) : (
+                  <div className="rounded-3xl overflow-hidden bg-slate-100 shadow-xl border border-slate-200">
+                    <img
+                      src={topic.image}
+                      alt={topic.title}
+                      className="w-full h-auto max-h-[600px] sm:max-h-[700px] object-cover"
+                    />
                   </div>
                 )}
               </div>
