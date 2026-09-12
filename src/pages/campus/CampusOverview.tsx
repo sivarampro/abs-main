@@ -75,7 +75,9 @@ export const CampusOverview: React.FC = () => {
       desc: 'Comprehensive infrastructure including round-the-clock medical rooms, advanced security systems, and core amenities to ensure a safe environment.',
       scrollGallery: [
         '/images/campus/facilities_1.jpg',
-        '/images/campus/facilities_2.jpg'
+        '/images/campus/facilities_2.jpg',
+        '/images/campus/facilities_3.jpg',
+        '/images/campus/facilities_4.jpg'
       ]
     }
   ];
