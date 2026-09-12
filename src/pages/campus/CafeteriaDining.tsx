@@ -31,18 +31,7 @@ export const CafeteriaDining: React.FC = () => {
     <section id="cafeteria" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
       
 
-      {/* Intro */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-xl space-y-4">
-          <span className="text-xs font-bold uppercase tracking-widest text-amber-400">Community & Camaraderie</span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
-            Spaces Where Lifelong Bonds Are Forged
-          </h2>
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl font-light">
-            Learning thrives in community. Our student commons, House lounges, dining halls, and outdoor courtyards provide welcoming, energetic environments where scholars relax, debate, collaborate, and build lasting friendships.
-          </p>
-        </div>
-      </section>
+
 
       {/* Spaces List */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">

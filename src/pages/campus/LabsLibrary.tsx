@@ -29,18 +29,7 @@ export const LabsLibrary: React.FC = () => {
   return (
     <section id="labs-library" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
       
-      {/* Intro */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-xl space-y-4">
-          <span className="text-xs font-bold uppercase tracking-widest text-amber-400">Discovery & Research</span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
-            Where Inquiry Meets Cutting-Edge Infrastructure
-          </h2>
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl font-light">
-            Our laboratories and libraries are designed to bridge the gap between theoretical knowledge and practical discovery. Students engage in high-level research, supported by comprehensive academic resources and industry-standard scientific equipment.
-          </p>
-        </div>
-      </section>
+
 
       {/* Facilities List */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">

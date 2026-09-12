@@ -24,18 +24,7 @@ export const Classrooms: React.FC = () => {
     <section id="classrooms" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
       
 
-      {/* Overview Intro */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-xl space-y-4">
-          <span className="text-xs font-bold uppercase tracking-widest text-amber-400">Architectural Philosophy</span>
-          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
-            Spaces Designed to Ignite Curiosity & Scholarly Focus
-          </h2>
-          <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl font-light">
-            We believe the physical environment is an essential teacher. Our learning spaces are bathed in natural light, acoustically treated to eliminate distraction, and equipped with agile modular furniture that transitions effortlessly between Socratic seminars, hands-on lab experiments, and collaborative group research.
-          </p>
-        </div>
-      </section>
+
 
       {/* Spaces Showcase */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
