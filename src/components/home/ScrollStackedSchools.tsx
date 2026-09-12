@@ -51,7 +51,7 @@ export const ScrollStackedSchools: React.FC = () => {
       aria-label="Five Schools One Vision"
     >
       {/* Sticky Viewport Container - Offset properly below the sticky Navbar */}
-      <div className="sticky top-32 lg:top-[140px] h-[calc(100vh-8rem)] lg:h-[calc(100vh-140px)] w-full flex flex-col justify-between pt-2 pb-2 sm:pt-3 sm:pb-3 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden bg-slate-50">
+      <div className="sticky w-full flex flex-col justify-between pt-2 pb-2 sm:pt-3 sm:pb-3 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto overflow-hidden bg-slate-50" style={{ top: '140px', height: 'calc(100vh - 140px)' }}>
         
         {/* Section Header (Always Visible & Prominent Below Navbar) */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-2 sm:gap-3 z-30 shrink-0 pb-1.5 border-b border-slate-200/50">
