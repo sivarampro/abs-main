@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Trophy, Activity, Sparkles, ShieldCheck, ArrowRight, Calendar, CheckCircle2 } from 'lucide-react';
 
-export const SportsRecreation: React.FC = () => {
+export const SportsPlaygrounds: React.FC = () => {
   const sportsFacilities = [
     {
       title: 'Olympic-Standard Aquatic Center',

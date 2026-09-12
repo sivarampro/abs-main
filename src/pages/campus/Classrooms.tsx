@@ -2,28 +2,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BookOpen, Sparkles, Monitor, Layers, Users, ArrowRight, Calendar, CheckCircle2 } from 'lucide-react';
 
-export const LearningSpaces: React.FC = () => {
+export const Classrooms: React.FC = () => {
   const spaces = [
     {
-      title: 'Smart Collaborative Classrooms',
-      tag: 'Interactive Pedagogy',
-      desc: 'Modular learning studios equipped with 86-inch 4K interactive multi-touch displays, flexible acoustic seating, and natural circadian daylighting for deep inquiry.',
+      title: 'Harkness Socratic Seminar Rooms',
+      tag: 'Interactive Classrooms',
+      desc: 'Oval-table seminar rooms designed to eliminate hierarchy and foster dialogue-driven learning, modeled after elite university tutorial spaces.',
+      specs: ['Capacity: 16 students max', 'Central oval oak Harkness table', '360-degree whiteboard walls', 'Acoustic sound dampening'],
+      image: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=1200&q=80'
+    },
+    {
+      title: 'Next-Gen Smart Classrooms',
+      tag: 'Digital Learning',
+      desc: 'Flexible seating environments equipped with interactive 4K smart panels and high-speed gigabit connectivity to support blended and flipped classroom pedagogies.',
       specs: ['Capacity: 24 students max', '86-inch 4K Smart Panels', 'Modular acoustic movable furniture', 'High-fidelity audio distribution'],
       image: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&w=1200&q=80'
-    },
-    {
-      title: 'The Knowledge Commons & Central Library',
-      tag: 'Research & Scholarly Commons',
-      desc: 'A dual-level architectural sanctuary housing 45,000+ print volumes, global subscriptions to JSTOR & Oxford Academic, and silent acoustic study pods.',
-      specs: ['45,000+ Curated Print Volumes', 'JSTOR, Nature & EBSCO digital databases', 'Acoustic glass discussion rooms', 'Automated RFID checkout kiosks'],
-      image: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=80'
-    },
-    {
-      title: 'Advanced Science & Discovery Labs',
-      tag: 'Experimental Sciences',
-      desc: 'Four dedicated collegiate wet and computational laboratories for Physics, Chemistry, Biology, and Biotechnology research with digital sensors.',
-      specs: ['Independent Bio, Chem & Physics wings', 'Digital Vernier sensor interface kits', 'Laminar air flow & automated fume hoods', 'Collegiate research microscope array'],
-      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80'
     }
   ];
 

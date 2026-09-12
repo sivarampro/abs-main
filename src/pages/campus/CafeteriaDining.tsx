@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Users, Coffee, Sun, Sparkles, ArrowRight, Calendar, CheckCircle2 } from 'lucide-react';
 
-export const StudentLifeSpaces: React.FC = () => {
+export const CafeteriaDining: React.FC = () => {
   const commonSpaces = [
     {
       title: 'The Great Dining Hall & Nutrition Center',

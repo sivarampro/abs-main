@@ -1,52 +1,50 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { ShieldCheck, Heart, Stethoscope, Lock, ArrowRight, Calendar, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 
-export const WellbeingSafety: React.FC = () => {
-  const safetyPillars = [
+export const LabsLibrary: React.FC = () => {
+  const hubs = [
     {
-      title: 'Health & Medical Infirmary',
-      tag: 'Medical Care',
-      desc: 'A 6-bed modern medical observation ward staffed by registered nursing staff 24/7 with on-call pediatric physicians and emergency triage capabilities.',
-      specs: ['24/7 Certified nursing staff on duty', 'Emergency AED defibrillators & oxygen', 'Confidential student health electronic records', 'Rapid response campus ambulance access'],
-      image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80'
+      title: 'Advanced Science & Discovery Labs',
+      tag: 'Experimental Sciences',
+      desc: 'Four dedicated collegiate wet and computational laboratories for Physics, Chemistry, Biology, and Biotechnology research with digital sensors.',
+      specs: ['Independent Bio, Chem & Physics wings', 'Digital Vernier sensor interface kits', 'Laminar air flow & automated fume hoods', 'Collegiate research microscope array'],
+      image: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=80'
     },
     {
-      title: 'Pastoral Care & Counseling Suites',
-      tag: 'Mental Health & Guidance',
-      desc: 'Tranquil, confidential consultation suites staffed by licensed child psychologists and pastoral guidance mentors for emotional and social support.',
-      specs: ['Private, soundproof consultation rooms', 'Licensed child psychologists & mentors', 'Sensory calm-down reflection garden', 'Social-emotional learning advisory workshops'],
-      image: 'https://images.unsplash.com/photo-1573497620053-ea5300f94f21?auto=format&fit=crop&w=1200&q=80'
+      title: 'The Knowledge Commons & Central Library',
+      tag: 'Research & Scholarly Commons',
+      desc: 'A dual-level architectural sanctuary housing 45,000+ print volumes, global subscriptions to JSTOR & Oxford Academic, and silent acoustic study pods.',
+      specs: ['45,000+ Curated Print Volumes', 'JSTOR, Nature & EBSCO digital databases', 'Acoustic glass discussion rooms', 'Automated RFID checkout kiosks'],
+      image: 'https://images.unsplash.com/photo-1521587760476-6c12a4b040da?auto=format&fit=crop&w=1200&q=80'
     },
     {
-      title: 'Smart Campus Security & Surveillance Hub',
-      tag: 'Safeguarding & Security',
-      desc: 'Comprehensive multi-layered perimeter security with 250+ HD CCTV cameras, biometric RFID access control, and real-time GPS fleet tracking.',
-      specs: ['250+ HD CCTV monitoring network', 'Biometric & RFID access control turnstiles', 'GPS real-time bus fleet tracking app', 'Background-vetted security personnel'],
-      image: 'https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=1200&q=80'
+      title: 'Robotics & AI Innovation Hub',
+      tag: 'Robotics & Mechatronics',
+      desc: 'An 8,000 sq.ft. industrial-grade maker laboratory with 3D printer arrays, CNC routers, laser engravers, automated testing arenas, and drone cages.',
+      specs: ['Array of industrial 3D printers & CNC', 'Arduino, Raspberry Pi & ESP32 IoT stations', 'Dedicated indoor drone testing cage', 'VR/AR spatial simulation goggles'],
+      image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80'
     }
   ];
 
   return (
-    <section id="facilities" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
+    <section id="labs-library" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
       
-
       {/* Intro */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-xl space-y-4">
-          <span className="text-xs font-bold uppercase tracking-widest text-amber-400">Pastoral Care & Safeguarding</span>
+          <span className="text-xs font-bold uppercase tracking-widest text-amber-400">Discovery & Research</span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
-            Unconditional Safety, Health & Emotional Wellbeing
+            Where Inquiry Meets Cutting-Edge Infrastructure
           </h2>
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl font-light">
-            Every child’s physical safety and emotional security are the foundational prerequisites for authentic learning. We operate with international safeguarding accreditations, full-time medical staff, and round-the-clock security infrastructure.
+            Our laboratories and libraries are designed to bridge the gap between theoretical knowledge and practical discovery. Students engage in high-level research, supported by comprehensive academic resources and industry-standard scientific equipment.
           </p>
         </div>
       </section>
 
       {/* Facilities List */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        {safetyPillars.map((facility, idx) => (
+        {hubs.map((facility, idx) => (
           <div
             key={idx}
             className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-card hover:shadow-card-hover transition-all"
@@ -76,7 +74,7 @@ export const WellbeingSafety: React.FC = () => {
                 </div>
 
                 <div className="space-y-2.5 pt-2">
-                  <span className="text-xs font-bold uppercase tracking-wider text-slate-900 block">Protocols & Standards:</span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-900 block">Equipment & Infrastructure:</span>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {facility.specs.map((spec, i) => (
                       <div key={i} className="flex items-center gap-2 text-xs text-slate-700 bg-slate-50 p-2.5 rounded-xl border border-slate-200/80">
@@ -92,7 +90,6 @@ export const WellbeingSafety: React.FC = () => {
         ))}
       </section>
 
-      
     </section>
   );
 };

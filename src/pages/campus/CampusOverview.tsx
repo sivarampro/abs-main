@@ -4,12 +4,13 @@ import { PageHeader } from '../../components/layout/PageHeader';
 import { InteractiveCampusMap } from '../../components/campus/InteractiveCampusMap';
 import { campusStats } from '../../data/campus';
 import { Sun, ArrowRight, Calendar } from 'lucide-react';
-import { LearningSpaces } from './LearningSpaces';
-import { ArtsCreativity } from './ArtsCreativity';
-import { SportsRecreation } from './SportsRecreation';
-import { StudentLifeSpaces } from './StudentLifeSpaces';
-import { WellbeingSafety } from './WellbeingSafety';
-import { TechnologyInnovation } from './TechnologyInnovation';
+import { Classrooms } from './Classrooms';
+import { LabsLibrary } from './LabsLibrary';
+import { SportsPlaygrounds } from './SportsPlaygrounds';
+import { ArtsActivity } from './ArtsActivity';
+import { CafeteriaDining } from './CafeteriaDining';
+import { TransportFacilities } from './TransportFacilities';
+import { CampusFacilities } from './CampusFacilities';
 
 export const CampusOverview: React.FC = () => {
   return (
@@ -245,12 +246,13 @@ export const CampusOverview: React.FC = () => {
       </section>
 
       {/* Render Subsections */}
-      <LearningSpaces />
-      <ArtsCreativity />
-      <SportsRecreation />
-      <StudentLifeSpaces />
-      <WellbeingSafety />
-      <TechnologyInnovation />
+      <Classrooms />
+      <LabsLibrary />
+      <SportsPlaygrounds />
+      <ArtsActivity />
+      <CafeteriaDining />
+      <TransportFacilities />
+      <CampusFacilities />
 
     </div>
   );

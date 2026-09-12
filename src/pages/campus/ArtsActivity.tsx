@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Palette, Music, Sparkles, Award, ArrowRight, Calendar, CheckCircle2 } from 'lucide-react';
 
-export const ArtsCreativity: React.FC = () => {
+export const ArtsActivity: React.FC = () => {
   const artsFacilities = [
     {
       title: 'The Grand Auditorium & Performing Arts Center',

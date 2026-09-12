@@ -1,52 +1,36 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Cpu, Bot, Sparkles, Terminal, ArrowRight, Calendar, CheckCircle2 } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 
-export const TechnologyInnovation: React.FC = () => {
-  const techHubs = [
+export const TransportFacilities: React.FC = () => {
+  const transportFeatures = [
     {
-      title: 'Robotics & AI Innovation Hub',
-      tag: 'Robotics & Mechatronics',
-      desc: 'An 8,000 sq.ft. industrial-grade maker laboratory with 3D printer arrays, CNC routers, laser engravers, automated testing arenas, and drone cages.',
-      specs: ['Array of industrial 3D printers & CNC', 'Arduino, Raspberry Pi & ESP32 IoT stations', 'Dedicated indoor drone testing cage', 'VR/AR spatial simulation goggles'],
-      image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=1200&q=80'
-    },
-    {
-      title: 'Advanced Computer Science & Data Labs',
-      tag: 'Computational Sciences',
-      desc: 'Dual-boot GPU development workstations with high-speed 10Gbps campus fiber, supporting machine learning models, cybersecurity exercises, and software development.',
-      specs: ['High-performance Nvidia GPU developer rigs', '10Gbps dedicated campus fiber connectivity', 'Multi-monitor coding workstations', 'Cloud sandbox development environments'],
-      image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80'
-    },
-    {
-      title: 'Digital Media & Virtual Reality Studio',
-      tag: 'Immersive Media & VR',
-      desc: 'Green screen broadcast studio, 4K digital cinematography equipment, podcast audio booths, and VR headsets for immersive spatial simulations.',
-      specs: ['Chroma-key green screen studio', '4K cinematography cameras & teleprompters', 'Acoustic broadcast podcasting booths', 'Oculus & HTC Vive VR learning modules'],
-      image: 'https://images.unsplash.com/photo-1593508512255-86ab42a8e620?auto=format&fit=crop&w=1200&q=80'
+      title: 'GPS-Tracked Safe Commute Fleet',
+      tag: 'Transport & Logistics',
+      desc: 'Our expansive fleet of air-conditioned buses ensures safe, comfortable, and timely commutes for students across all major city routes. Equipped with real-time GPS tracking for parents.',
+      specs: ['Real-time GPS tracking app for parents', 'CCTV surveillance in all buses', 'Trained female attendants on board', 'Speed governors & seat belts'],
+      image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80'
     }
   ];
 
   return (
-    <section id="labs-library" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
+    <section id="transport" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
       
-
       {/* Intro */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-xl space-y-4">
-          <span className="text-xs font-bold uppercase tracking-widest text-amber-400">Pioneering Frontier Tech</span>
+          <span className="text-xs font-bold uppercase tracking-widest text-amber-400">Safe & Reliable</span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
-            Transforming Ideas into Real-World Breakthroughs
+            Seamless Connectivity & Secure Transit
           </h2>
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl font-light">
-            In our Innovation Hubs, students are not mere consumers of digital tools—they are creators, engineers, and researchers who build automated machines, analyze algorithmic accountability, and design solutions for real-world societal impact.
+            We prioritize the safety and comfort of our students from the moment they leave home until they return. Our dedicated transport network is managed by experienced professionals and features state-of-the-art security technology.
           </p>
         </div>
       </section>
 
       {/* Facilities List */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        {techHubs.map((facility, idx) => (
+        {transportFeatures.map((facility, idx) => (
           <div
             key={idx}
             className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-card hover:shadow-card-hover transition-all"
@@ -76,7 +60,7 @@ export const TechnologyInnovation: React.FC = () => {
                 </div>
 
                 <div className="space-y-2.5 pt-2">
-                  <span className="text-xs font-bold uppercase tracking-wider text-slate-900 block">Equipment & Infrastructure:</span>
+                  <span className="text-xs font-bold uppercase tracking-wider text-slate-900 block">Safety & Features:</span>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                     {facility.specs.map((spec, i) => (
                       <div key={i} className="flex items-center gap-2 text-xs text-slate-700 bg-slate-50 p-2.5 rounded-xl border border-slate-200/80">
@@ -92,7 +76,6 @@ export const TechnologyInnovation: React.FC = () => {
         ))}
       </section>
 
-      
     </section>
   );
 };
