@@ -86,24 +86,30 @@ export const CampusOverview: React.FC = () => {
               className={`py-20 sm:py-28 ${isEven ? 'bg-white' : 'bg-slate-50 border-y border-slate-200'} scroll-mt-20`}
             >
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
-                <div className="text-center max-w-3xl mx-auto space-y-4">
-                  <h3 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
-                    {topic.title}
-                  </h3>
-                  <p className="text-slate-600 sm:text-lg leading-relaxed">
-                    {topic.desc}
-                  </p>
-                </div>
                 {topic.scrollGallery ? (
-                  <ScrollStackedImages images={topic.scrollGallery} />
+                  <ScrollStackedImages 
+                    images={topic.scrollGallery} 
+                    title={topic.title} 
+                    desc={topic.desc} 
+                  />
                 ) : (
-                  <div className="rounded-3xl overflow-hidden bg-slate-100 shadow-xl border border-slate-200">
-                    <img
-                      src={topic.image}
-                      alt={topic.title}
-                      className="w-full h-auto max-h-[600px] sm:max-h-[700px] object-cover"
-                    />
-                  </div>
+                  <>
+                    <div className="text-center max-w-3xl mx-auto space-y-4">
+                      <h3 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 tracking-tight">
+                        {topic.title}
+                      </h3>
+                      <p className="text-slate-600 sm:text-lg leading-relaxed">
+                        {topic.desc}
+                      </p>
+                    </div>
+                    <div className="rounded-3xl overflow-hidden bg-slate-100 shadow-xl border border-slate-200">
+                      <img
+                        src={topic.image}
+                        alt={topic.title}
+                        className="w-full h-auto max-h-[600px] sm:max-h-[700px] object-cover"
+                      />
+                    </div>
+                  </>
                 )}
               </div>
             </section>
