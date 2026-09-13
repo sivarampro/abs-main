@@ -171,39 +171,15 @@ export const Home: React.FC = () => {
                 <img 
                   src={img} 
                   alt="" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
             ))}
-            {/* Overlay to ensure text readability */}
-            <div className="absolute inset-0 bg-white/60 sm:bg-white/50 backdrop-blur-[1px]" />
-            <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-slate-50/90" />
+            {/* Subtle gradient at bottom for stats readability */}
+            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-900/40 to-transparent" />
           </div>
 
-          <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
-            
-            {/* Top Heritage & 17 Years Badge */}
-            <div className="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-white border border-amber-300 shadow-xs text-amber-950 text-xs font-bold uppercase tracking-widest mb-6 sm:mb-8 animate-fade-in">
-              <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
-              <span>Celebrating 17 Years of Academic Excellence</span>
-              <span className="text-slate-300">|</span>
-              <span className="text-amber-800 font-semibold">Legacy Since 1936</span>
-            </div>
-
-            {/* Core Motto */}
-            <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight text-slate-950 leading-[1.05] mb-6">
-              <span className="block text-slate-900">EDUCATE.</span>
-              <span className="block text-amber-500">ENLIGHTEN.</span>
-              <span className="block text-slate-900">EXCEL.</span>
-            </h1>
-
-            {/* Subtitle Statement */}
-            <p className="max-w-2xl mx-auto text-base sm:text-lg lg:text-xl text-slate-600 leading-relaxed mb-8 sm:mb-10 font-normal">
-              Five premier campuses across Chennai and Thiruvallur united by a shared mission to nurture over 
-              <strong className="text-slate-900 font-semibold"> 5,000+ students </strong> 
-              with 
-              <strong className="text-slate-900 font-semibold"> 450+ dedicated educators</strong>.
-            </p>
+          <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 flex flex-col justify-end min-h-[500px] sm:min-h-[600px] lg:min-h-[700px] pb-8">
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10 sm:mb-12">
