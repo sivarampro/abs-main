@@ -12,17 +12,17 @@ export const TeachingLearning: React.FC = () => {
     {
       title: 'Experimental Laboratory & Empirical Research',
       desc: 'Science is learned at the laboratory bench. Students design original experiments, test scientific hypotheses with Vernier digital probes, and write formal research papers.',
-      icon: <Lightbulb className="w-6 h-6 text-blue-600" />
+      icon: <Lightbulb className="w-6 h-6 text-amber-600" />
     },
     {
       title: 'Differentiated & Personalized Learning',
       desc: 'Recognizing that each scholar learns uniquely, our educators craft tailored scaffolding and enrichment modules ensuring every child is appropriately challenged.',
-      icon: <Users className="w-6 h-6 text-emerald-600" />
+      icon: <Users className="w-6 h-6 text-amber-600" />
     },
     {
       title: 'Project-Based Interdisciplinary Capstones',
       desc: 'Real-world challenges where students combine mathematics, coding, ecological research, and rhetoric to propose actionable solutions to community problems.',
-      icon: <Sparkles className="w-6 h-6 text-purple-600" />
+      icon: <Sparkles className="w-6 h-6 text-amber-600" />
     }
   ];
 

@@ -12,17 +12,17 @@ export const Curriculum: React.FC = () => {
     {
       title: 'Interdisciplinary STEM & Humanities',
       desc: 'Connecting mathematics with physics, literature with historical context, and coding with environmental sustainability.',
-      icon: <Globe className="w-5 h-5 text-blue-600" />
+      icon: <Globe className="w-5 h-5 text-amber-600" />
     },
     {
       title: 'Global Benchmarking & Board Excellence',
       desc: 'Seamlessly aligning national board examination excellence with international Cambridge and pre-university standards.',
-      icon: <Award className="w-5 h-5 text-emerald-600" />
+      icon: <Award className="w-5 h-5 text-amber-600" />
     },
     {
       title: 'Ethics, Rhetoric & Critical Debate',
       desc: 'Developing students who can critically dissect arguments, analyze bias in large data sets, and articulate visionary ideas.',
-      icon: <ShieldCheck className="w-5 h-5 text-purple-600" />
+      icon: <ShieldCheck className="w-5 h-5 text-amber-600" />
     }
   ];
 
