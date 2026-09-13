@@ -38,7 +38,7 @@ export const Curriculum: React.FC = () => {
           </div>
 
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white leading-tight">
-            Curriculum That Prepares Scholars for the 21st Century
+            Curriculum
           </h2>
 
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-4xl font-light">

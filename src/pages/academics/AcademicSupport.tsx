@@ -35,7 +35,7 @@ export const AcademicSupport: React.FC = () => {
         <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-xl space-y-4">
           <span className="text-xs font-bold uppercase tracking-widest text-amber-400">Every Student Known & Supported</span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
-            Targeted Guidance for Every Individual Learner
+            Academic Support
           </h2>
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl font-light">
             No two students follow the exact same path. Our comprehensive academic support system provides both remedial clinics for conceptual gaps and advanced enrichment honors tracks to push scholars to their maximum potential.

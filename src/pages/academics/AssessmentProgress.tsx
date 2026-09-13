@@ -35,7 +35,7 @@ export const AssessmentProgress: React.FC = () => {
         <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-xl space-y-4">
           <span className="text-xs font-bold uppercase tracking-widest text-amber-400">Assessment Philosophy</span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
-            Evaluation as a Tool for Empowerment, Not Anxiety
+            Assessment & Progress
           </h2>
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl font-light">
             We believe the purpose of assessment is not simply to assign a final letter grade, but to illuminate a student's learning pathway. Our multifaceted evaluation system measures critical thinking, creativity, empirical execution, and steady growth over time.

@@ -33,7 +33,7 @@ export const AcademicTechInnovation: React.FC = () => {
         <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-xl space-y-4">
           <span className="text-xs font-bold uppercase tracking-widest text-amber-400">Computational Fluency</span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
-            Beyond Technology Consumption to Technological Creation
+            Technology & Innovation
           </h2>
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl font-light">
             In an era shaped by artificial intelligence and automated systems, digital fluency is as foundational as literacy. We prepare our scholars to be the architects of tomorrow's technological breakthroughs through deep conceptual rigor and ethical awareness.

@@ -37,12 +37,13 @@ export const AcademicsOverview: React.FC = () => {
         <div className="bg-white/95 backdrop-blur-md rounded-2xl border border-slate-200 shadow-md p-2 sm:p-3">
           <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar scroll-smooth">
             {[
-              { id: 'learning-journey', number: '01', title: 'Learning Journey' },
-              { id: 'curriculum', number: '02', title: 'Curriculum' },
-              { id: 'teaching-learning', number: '03', title: 'Teaching & Learning' },
-              { id: 'technology-innovation', number: '04', title: 'Tech & Innovation' },
-              { id: 'support', number: '05', title: 'Academic Support' },
-              { id: 'assessment-progress', number: '06', title: 'Assessment' },
+              { id: 'academic-overview', number: '01', title: 'Academic Overview' },
+              { id: 'learning-journey', number: '02', title: 'Learning Journey' },
+              { id: 'curriculum', number: '03', title: 'Curriculum' },
+              { id: 'teaching-learning', number: '04', title: 'Teaching & Learning' },
+              { id: 'technology-innovation', number: '05', title: 'Technology & Innovation' },
+              { id: 'support', number: '06', title: 'Academic Support' },
+              { id: 'assessment-progress', number: '07', title: 'Assessment & Progress' },
             ].map((sec) => (
               <Link
                 key={sec.id}
@@ -60,7 +61,13 @@ export const AcademicsOverview: React.FC = () => {
       </div>
 
       {/* 1. Academic Pedagogy Pillars */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="academic-overview" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-28">
+        <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
+          <span className="text-xs font-bold uppercase tracking-widest text-amber-700">Foundational Principles</span>
+          <h2 className="font-serif text-3xl font-bold text-slate-950">
+            Academic Overview
+          </h2>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="p-8 rounded-3xl bg-slate-900 text-white border border-slate-800 space-y-3">
             <div className="w-10 h-10 rounded-xl bg-amber-400/20 text-amber-400 flex items-center justify-center">

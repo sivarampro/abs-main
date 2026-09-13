@@ -35,7 +35,7 @@ export const TeachingLearning: React.FC = () => {
         <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-xl space-y-4">
           <span className="text-xs font-bold uppercase tracking-widest text-amber-400">Pedagogical Philosophy</span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
-            Active Minds, Deep Engagement, Lifelong Mastery
+            Teaching & Learning
           </h2>
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl font-light">
             We move beyond passive listening. Our classrooms are energetic workshops of thought where teachers serve as intellectual mentors, challenging students to formulate hypotheses, defend arguments with empirical evidence, and iterate with confidence.

@@ -13,7 +13,7 @@ export const LearningJourney: React.FC = () => {
         <div className="bg-slate-900 text-white rounded-3xl p-8 sm:p-12 border border-slate-800 shadow-xl space-y-4">
           <span className="text-xs font-bold uppercase tracking-widest text-amber-400">Developmental Continuum</span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-white">
-            Nurturing Each Child at Every Stage of Growth
+            Learning Journey
           </h2>
           <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-3xl font-light">
             Our learning journey is purposefully sequenced so that concepts introduced in the Early Years through experiential play evolve into rigorous empirical research, analytical rhetoric, and advanced pre-university mastery in Senior Secondary.
