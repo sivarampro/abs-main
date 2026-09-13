@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ArrowRight, 
@@ -47,6 +47,22 @@ export const Home: React.FC = () => {
   const [isRSVPOpen, setIsRSVPOpen] = useState(false);
   const [activeSchoolId, setActiveSchoolId] = useState<string>('global-korattur');
   const [activeDimension, setActiveDimension] = useState<number>(0);
+  const [currentBgIndex, setCurrentBgIndex] = useState(0);
+
+  const backgroundImages = [
+    "/images/schools/korattur_official.jpg",
+    "/images/schools/jnroad_official.jpg",
+    "/images/schools/avadi_official.jpg",
+    "/images/schools/vidhyamandhir_official.jpg",
+    "/images/schools/vidhyaalayaa_official.jpg"
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentBgIndex((prev) => (prev + 1) % backgroundImages.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
 
   const featuredArticle = journalArticles.find(a => a.featured) || journalArticles[0];
   const upcomingEvents = schoolEvents.filter(e => e.isUpcoming).slice(0, 3);
@@ -143,32 +159,25 @@ export const Home: React.FC = () => {
           <div className="absolute inset-0 bg-subtle-mesh opacity-80 pointer-events-none" />
           <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
           
-          {/* Background Scrolling Images */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 flex flex-col justify-between opacity-[0.08] sm:opacity-[0.12] py-4 gap-6" aria-hidden="true" style={{ filter: 'grayscale(30%)' }}>
-            {/* Top row scrolling left */}
-            <div className="flex w-max animate-marquee space-x-6">
-              {[...Array(3)].map((_, i) => (
-                <React.Fragment key={`top-${i}`}>
-                  <img src="/images/schools/korattur_official.jpg" alt="" className="h-40 sm:h-64 w-auto aspect-video object-cover rounded-3xl" />
-                  <img src="/images/schools/jnroad_official.jpg" alt="" className="h-40 sm:h-64 w-auto aspect-video object-cover rounded-3xl" />
-                  <img src="/images/schools/avadi_official.jpg" alt="" className="h-40 sm:h-64 w-auto aspect-video object-cover rounded-3xl" />
-                  <img src="/images/schools/vidhyamandhir_official.jpg" alt="" className="h-40 sm:h-64 w-auto aspect-video object-cover rounded-3xl" />
-                  <img src="/images/schools/vidhyaalayaa_official.jpg" alt="" className="h-40 sm:h-64 w-auto aspect-video object-cover rounded-3xl" />
-                </React.Fragment>
-              ))}
-            </div>
-            {/* Bottom row scrolling right */}
-            <div className="flex w-max animate-marquee space-x-6" style={{ animationDirection: 'reverse' }}>
-              {[...Array(3)].map((_, i) => (
-                <React.Fragment key={`bottom-${i}`}>
-                  <img src="/images/schools/vidhyamandhir_official.jpg" alt="" className="h-40 sm:h-64 w-auto aspect-video object-cover rounded-3xl" />
-                  <img src="/images/schools/avadi_official.jpg" alt="" className="h-40 sm:h-64 w-auto aspect-video object-cover rounded-3xl" />
-                  <img src="/images/schools/vidhyaalayaa_official.jpg" alt="" className="h-40 sm:h-64 w-auto aspect-video object-cover rounded-3xl" />
-                  <img src="/images/schools/korattur_official.jpg" alt="" className="h-40 sm:h-64 w-auto aspect-video object-cover rounded-3xl" />
-                  <img src="/images/schools/jnroad_official.jpg" alt="" className="h-40 sm:h-64 w-auto aspect-video object-cover rounded-3xl" />
-                </React.Fragment>
-              ))}
-            </div>
+          {/* Background Slideshow */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0" aria-hidden="true">
+            {backgroundImages.map((img, idx) => (
+              <div
+                key={img}
+                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                  idx === currentBgIndex ? 'opacity-100' : 'opacity-0'
+                }`}
+              >
+                <img 
+                  src={img} 
+                  alt="" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+            {/* Overlay to ensure text readability */}
+            <div className="absolute inset-0 bg-white/85 sm:bg-white/75 backdrop-blur-[2px]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-transparent to-slate-50" />
           </div>
 
           <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
