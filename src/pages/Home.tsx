@@ -176,8 +176,8 @@ export const Home: React.FC = () => {
               </div>
             ))}
             {/* Overlay to ensure text readability */}
-            <div className="absolute inset-0 bg-white/85 sm:bg-white/75 backdrop-blur-[2px]" />
-            <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-transparent to-slate-50" />
+            <div className="absolute inset-0 bg-white/60 sm:bg-white/50 backdrop-blur-[1px]" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-transparent to-slate-50/90" />
           </div>
 
           <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
