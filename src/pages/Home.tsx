@@ -143,136 +143,32 @@ export const Home: React.FC = () => {
           <div className="absolute inset-0 bg-subtle-mesh opacity-80 pointer-events-none" />
           <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
           
-          {/* 3 Floating Schools on the Left Side */}
-          {/* School 01 - Korattur (Top Left) */}
-          <div 
-            className="hidden lg:block absolute left-4 xl:left-16 2xl:left-32 top-8 xl:top-12 w-40 xl:w-48 2xl:w-56 z-20 animate-float-slow pointer-events-auto"
-            style={{ ['--photo-rot' as string]: '-6deg' }}
-          >
-            <a 
-              href="#five-schools"
-              className="block bg-white p-2 pb-3 rounded-2xl shadow-2xl border border-slate-200/90 transform -rotate-6 hover:rotate-0 hover:scale-105 transition-all duration-300 group"
-            >
-              <div className="relative aspect-[16/9] rounded-xl overflow-hidden bg-slate-100 mb-1.5 border border-slate-100">
-                <img 
-                  src="/images/schools/korattur_official.jpg" 
-                  alt="ABS Korattur Campus" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                />
-                <div className="absolute top-1.5 left-1.5 px-2 py-0.5 rounded-full bg-slate-900/85 backdrop-blur-xs text-[9px] xl:text-[10px] font-bold text-amber-400 uppercase tracking-wider">
-                  Korattur
-                </div>
-              </div>
-              <div className="flex items-center justify-between px-1">
-                <span className="text-[10px] xl:text-[11px] font-bold text-slate-800 tracking-tight">ABS Global Smart</span>
-                <span className="text-[9px] xl:text-[10px] font-semibold text-amber-600 uppercase tracking-wider">CBSE</span>
-              </div>
-            </a>
-          </div>
-
-          {/* School 02 - JN Road (Middle Left) */}
-          <div 
-            className="hidden lg:block absolute left-2 xl:left-8 2xl:left-16 top-[32%] w-36 xl:w-44 2xl:w-52 z-20 animate-float-reverse pointer-events-auto"
-            style={{ ['--photo-rot' as string]: '4deg' }}
-          >
-            <a 
-              href="#five-schools"
-              className="block bg-white p-2 pb-3 rounded-2xl shadow-2xl border border-slate-200/90 transform rotate-3 hover:rotate-0 hover:scale-105 transition-all duration-300 group"
-            >
-              <div className="relative aspect-[16/9] rounded-xl overflow-hidden bg-slate-100 mb-1.5 border border-slate-100">
-                <img 
-                  src="/images/schools/jnroad_official.jpg" 
-                  alt="ABS JN Road Campus" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                />
-                <div className="absolute top-1.5 left-1.5 px-2 py-0.5 rounded-full bg-slate-900/85 backdrop-blur-xs text-[9px] xl:text-[10px] font-bold text-amber-400 uppercase tracking-wider">
-                  JN Road
-                </div>
-              </div>
-              <div className="flex items-center justify-between px-1">
-                <span className="text-[10px] xl:text-[11px] font-bold text-slate-800 tracking-tight">ABS Global Smart</span>
-                <span className="text-[9px] xl:text-[10px] font-semibold text-amber-600 uppercase tracking-wider">CBSE</span>
-              </div>
-            </a>
-          </div>
-
-          {/* School 03 - Avadi (Bottom Left) */}
-          <div 
-            className="hidden lg:block absolute left-4 xl:left-20 2xl:left-36 top-[58%] w-40 xl:w-48 2xl:w-56 z-20 animate-float-delay pointer-events-auto"
-            style={{ ['--photo-rot' as string]: '-4deg' }}
-          >
-            <a 
-              href="#five-schools"
-              className="block bg-white p-2 pb-3 rounded-2xl shadow-2xl border border-slate-200/90 transform -rotate-4 hover:rotate-0 hover:scale-105 transition-all duration-300 group"
-            >
-              <div className="relative aspect-[16/9] rounded-xl overflow-hidden bg-slate-100 mb-1.5 border border-slate-100">
-                <img 
-                  src="/images/schools/avadi_official.jpg" 
-                  alt="ABS Avadi Campus" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                />
-                <div className="absolute top-1.5 left-1.5 px-2 py-0.5 rounded-full bg-slate-900/85 backdrop-blur-xs text-[9px] xl:text-[10px] font-bold text-amber-400 uppercase tracking-wider">
-                  Avadi
-                </div>
-              </div>
-              <div className="flex items-center justify-between px-1">
-                <span className="text-[10px] xl:text-[11px] font-bold text-slate-800 tracking-tight">ABS Global Smart</span>
-                <span className="text-[9px] xl:text-[10px] font-semibold text-amber-600 uppercase tracking-wider">CBSE</span>
-              </div>
-            </a>
-          </div>
-
-          {/* 2 Floating Schools on the Right Side */}
-          {/* School 04 - Vidhya Mandhir (Top Right) */}
-          <div 
-            className="hidden lg:block absolute right-4 xl:right-16 2xl:right-32 top-12 xl:top-20 w-44 xl:w-52 2xl:w-60 z-20 animate-float-delay pointer-events-auto"
-            style={{ ['--photo-rot' as string]: '5deg' }}
-          >
-            <a 
-              href="#five-schools"
-              className="block bg-white p-2 pb-3 rounded-2xl shadow-2xl border border-slate-200/90 transform rotate-5 hover:rotate-0 hover:scale-105 transition-all duration-300 group"
-            >
-              <div className="relative aspect-[16/9] rounded-xl overflow-hidden bg-slate-100 mb-1.5 border border-slate-100">
-                <img 
-                  src="/images/schools/vidhyamandhir_official.jpg" 
-                  alt="ABS Vidhya Mandhir Campus" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                />
-                <div className="absolute top-1.5 left-1.5 px-2 py-0.5 rounded-full bg-slate-900/85 backdrop-blur-xs text-[9px] xl:text-[10px] font-bold text-amber-400 uppercase tracking-wider">
-                  Vidhya Mandhir
-                </div>
-              </div>
-              <div className="flex items-center justify-between px-1">
-                <span className="text-[10px] xl:text-[11px] font-bold text-slate-800 tracking-tight">ABS Vidhya Mandhir</span>
-                <span className="text-[9px] xl:text-[10px] font-semibold text-amber-600 uppercase tracking-wider">CBSE</span>
-              </div>
-            </a>
-          </div>
-
-          {/* School 05 - ABS Vidhyaalayaa (Bottom Right) */}
-          <div 
-            className="hidden lg:block absolute right-6 xl:right-24 2xl:right-40 top-[40%] xl:top-[44%] w-44 xl:w-52 2xl:w-60 z-20 animate-float-slow pointer-events-auto"
-            style={{ ['--photo-rot' as string]: '-5deg' }}
-          >
-            <a 
-              href="#five-schools"
-              className="block bg-white p-2 pb-3 rounded-2xl shadow-2xl border border-slate-200/90 transform -rotate-5 hover:rotate-0 hover:scale-105 transition-all duration-300 group"
-            >
-              <div className="relative aspect-[16/9] rounded-xl overflow-hidden bg-slate-100 mb-1.5 border border-slate-100">
-                <img 
-                  src="/images/schools/vidhyaalayaa_official.jpg" 
-                  alt="ABS Vidhyaalayaa Campus" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
-                />
-                <div className="absolute top-1.5 left-1.5 px-2 py-0.5 rounded-full bg-slate-900/85 backdrop-blur-xs text-[9px] xl:text-[10px] font-bold text-amber-400 uppercase tracking-wider">
-                  ABS Vidhyaalayaa
-                </div>
-              </div>
-              <div className="flex items-center justify-between px-1">
-                <span className="text-[10px] xl:text-[11px] font-bold text-slate-800 tracking-tight">ABS Vidhyaalayaa</span>
-                <span className="text-[9px] xl:text-[10px] font-semibold text-amber-600 uppercase tracking-wider">Matric</span>
-              </div>
-            </a>
+          {/* Background Scrolling Images */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 flex flex-col justify-between opacity-[0.08] sm:opacity-[0.12] py-4 gap-6" aria-hidden="true" style={{ filter: 'grayscale(30%)' }}>
+            {/* Top row scrolling left */}
+            <div className="flex w-max animate-marquee space-x-6">
+              {[...Array(3)].map((_, i) => (
+                <React.Fragment key={`top-${i}`}>
+                  <img src="/images/schools/korattur_official.jpg" alt="" className="h-40 sm:h-64 w-auto aspect-video object-cover rounded-3xl" />
+                  <img src="/images/schools/jnroad_official.jpg" alt="" className="h-40 sm:h-64 w-auto aspect-video object-cover rounded-3xl" />
+                  <img src="/images/schools/avadi_official.jpg" alt="" className="h-40 sm:h-64 w-auto aspect-video object-cover rounded-3xl" />
+                  <img src="/images/schools/vidhyamandhir_official.jpg" alt="" className="h-40 sm:h-64 w-auto aspect-video object-cover rounded-3xl" />
+                  <img src="/images/schools/vidhyaalayaa_official.jpg" alt="" className="h-40 sm:h-64 w-auto aspect-video object-cover rounded-3xl" />
+                </React.Fragment>
+              ))}
+            </div>
+            {/* Bottom row scrolling right */}
+            <div className="flex w-max animate-marquee space-x-6" style={{ animationDirection: 'reverse' }}>
+              {[...Array(3)].map((_, i) => (
+                <React.Fragment key={`bottom-${i}`}>
+                  <img src="/images/schools/vidhyamandhir_official.jpg" alt="" className="h-40 sm:h-64 w-auto aspect-video object-cover rounded-3xl" />
+                  <img src="/images/schools/avadi_official.jpg" alt="" className="h-40 sm:h-64 w-auto aspect-video object-cover rounded-3xl" />
+                  <img src="/images/schools/vidhyaalayaa_official.jpg" alt="" className="h-40 sm:h-64 w-auto aspect-video object-cover rounded-3xl" />
+                  <img src="/images/schools/korattur_official.jpg" alt="" className="h-40 sm:h-64 w-auto aspect-video object-cover rounded-3xl" />
+                  <img src="/images/schools/jnroad_official.jpg" alt="" className="h-40 sm:h-64 w-auto aspect-video object-cover rounded-3xl" />
+                </React.Fragment>
+              ))}
+            </div>
           </div>
 
           <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
