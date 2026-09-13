@@ -5,7 +5,6 @@ import { schoolEvents } from '../../data/events';
 import { SchoolEvent } from '../../types';
 import { EventRSVPModal } from '../../components/widgets/EventRSVPModal';
 import { Calendar, MapPin, Clock, Ticket, ArrowRight, Filter, Sparkles } from 'lucide-react';
-import { AnnualCalendar } from './AnnualCalendar';
 import { PastEventsHighlights } from './PastEventsHighlights';
 
 export const EventsList: React.FC = () => {
@@ -16,6 +15,7 @@ export const EventsList: React.FC = () => {
     { id: 'upcoming', title: 'Upcoming Events', filter: (e: SchoolEvent) => e.isUpcoming },
     { id: 'academic', title: 'Academic Event', filter: (e: SchoolEvent) => e.category === 'Academic' },
     { id: 'sports', title: 'Sports & Activities', filter: (e: SchoolEvent) => e.category === 'Sports' },
+    { id: 'annual', title: 'Annual Events', filter: (e: SchoolEvent) => e.title.toLowerCase().includes('annual') || e.description.toLowerCase().includes('annual') },
     { id: 'community', title: 'Festival and Community Events', filter: (e: SchoolEvent) => e.category === 'Community' || e.category === 'Arts' },
   ];
 
@@ -42,10 +42,7 @@ export const EventsList: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-10 sm:-mt-14 relative z-10">
         <div className="bg-white/95 backdrop-blur-md rounded-2xl border border-slate-200 shadow-md p-2 sm:p-3">
           <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar scroll-smooth">
-            {[
-              ...categories,
-              { id: 'annual', title: 'Annual Events' }
-            ].map((sec, idx) => (
+            {categories.map((sec, idx) => (
               <Link
                 key={sec.id}
                 to={`/events#${sec.id}`}
@@ -154,8 +151,6 @@ export const EventsList: React.FC = () => {
           </section>
         );
       })}
-
-      <AnnualCalendar />
 
       {/* RSVP Modal */}
       <EventRSVPModal
