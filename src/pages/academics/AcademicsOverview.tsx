@@ -80,7 +80,7 @@ export const AcademicsOverview: React.FC = () => {
           </div>
 
           <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-card space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center">
               <Award className="w-5 h-5" />
             </div>
             <h3 className="font-serif text-2xl font-bold text-slate-950">Subject Specialist Mentors</h3>
@@ -90,7 +90,7 @@ export const AcademicsOverview: React.FC = () => {
           </div>
 
           <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-card space-y-3">
-            <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+            <div className="w-10 h-10 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center">
               <Clock className="w-5 h-5" />
             </div>
             <h3 className="font-serif text-2xl font-bold text-slate-950">Personalized Trajectory</h3>

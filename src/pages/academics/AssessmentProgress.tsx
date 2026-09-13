@@ -12,17 +12,17 @@ export const AssessmentProgress: React.FC = () => {
     {
       title: 'Summative Rigor & Board Benchmark Exams',
       desc: 'Structured term-end examinations designed to rigorous national board and international standards, assessing multi-chapter conceptual synthesis and application.',
-      icon: <Award className="w-6 h-6 text-blue-600" />
+      icon: <Award className="w-6 h-6 text-amber-600" />
     },
     {
       title: 'Student Portfolios & Capstone Defenses',
       desc: 'Scholars curate authentic project portfolios, research dissertations, and artistic bodies of work which they defend orally before faculty and peer panels.',
-      icon: <FileText className="w-6 h-6 text-emerald-600" />
+      icon: <FileText className="w-6 h-6 text-amber-600" />
     },
     {
       title: 'Transparent Parent Analytics Portal',
       desc: 'Parents receive comprehensive digital progress reports with topic-by-topic competency heatmaps, growth trends, and actionable teacher feedback in real-time.',
-      icon: <BarChart3 className="w-6 h-6 text-purple-600" />
+      icon: <BarChart3 className="w-6 h-6 text-amber-600" />
     }
   ];
 
