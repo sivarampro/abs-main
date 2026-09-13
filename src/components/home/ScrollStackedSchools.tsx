@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { fiveSchoolsData, SchoolInfo } from '../../data/schoolsData';
 
@@ -55,10 +56,14 @@ export const ScrollStackedSchools: React.FC = () => {
         
         {/* Section Header (Always Visible & Prominent Below Navbar) */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-2 sm:gap-3 z-30 shrink-0 pb-1.5 border-b border-slate-200/50 mb-2 sm:mb-4">
-          <div className="space-y-0.5">
+          <div className="space-y-0.5 flex flex-col sm:flex-row sm:items-baseline sm:gap-4">
             <h2 className="font-serif text-xl sm:text-2xl lg:text-3xl font-bold text-slate-950 tracking-tight">
               OUR CAMPUSES
             </h2>
+            <Link to="/campus" className="inline-flex items-center gap-1 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-amber-600 hover:text-amber-700 transition-colors">
+              <span>Explore All Campus Facilities</span>
+              <ArrowRight className="w-3 sm:w-3.5 h-3 sm:h-3.5" />
+            </Link>
           </div>
 
           {/* Quick School Jump Selector (Always Visible) */}
