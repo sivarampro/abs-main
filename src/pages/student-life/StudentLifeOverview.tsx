@@ -47,10 +47,11 @@ export const StudentLifeOverview: React.FC = () => {
         <div className="bg-white/95 backdrop-blur-md rounded-2xl border border-slate-200 shadow-md p-2 sm:p-3">
           <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar scroll-smooth">
             {[
-              { id: 'arts', number: '01', title: 'Arts & Culture' },
-              { id: 'athletics', number: '02', title: 'Sports & Athletics' },
-              { id: 'innovation', number: '03', title: 'Innovation & Technology' },
-              { id: 'community', number: '04', title: 'Clubs, Leadership & Community' },
+              { id: 'overview', number: '01', title: 'Co-Curricular Overview' },
+              { id: 'arts', number: '02', title: 'Arts & Culture' },
+              { id: 'athletics', number: '03', title: 'Sports & Athletics' },
+              { id: 'innovation', number: '04', title: 'Innovation & Technology' },
+              { id: 'community', number: '05', title: 'Clubs, Leadership & Community' },
             ].map((sec) => (
               <Link
                 key={sec.id}
@@ -68,7 +69,7 @@ export const StudentLifeOverview: React.FC = () => {
       </div>
 
       {/* 1. House System Showcase */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+      <section id="overview" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 scroll-mt-28">
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <span className="text-xs font-bold uppercase tracking-widest text-amber-700">Tradition & Belonging</span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-950">

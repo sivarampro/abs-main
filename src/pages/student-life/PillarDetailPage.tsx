@@ -31,8 +31,12 @@ export const PillarDetailPage: React.FC<PillarDetailPageProps> = ({ pillarSlug: 
             </div>
 
             <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-950 leading-tight">
-              {pillar.description}
+              {pillar.title}
             </h2>
+            
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-light">
+              {pillar.description}
+            </p>
 
             <div className="space-y-2.5 pt-2">
               <span className="text-xs font-bold uppercase tracking-wider text-slate-700 block">Distinguishing Hallmarks</span>
