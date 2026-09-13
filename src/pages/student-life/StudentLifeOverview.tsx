@@ -73,7 +73,7 @@ export const StudentLifeOverview: React.FC = () => {
         <div className="text-center max-w-2xl mx-auto space-y-2">
           <span className="text-xs font-bold uppercase tracking-widest text-amber-700">Tradition & Belonging</span>
           <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-950">
-            The ABS Four-House System
+            Co-Curricular Overview
           </h2>
           <p className="text-xs sm:text-sm text-slate-600">
             Every scholar belongs to one of our historic houses, fostering cross-grade camaraderie, healthy spirited competition, and leadership.
