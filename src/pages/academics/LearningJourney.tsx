@@ -3,7 +3,11 @@ import { Link } from 'react-router-dom';
 import { academicDivisions } from '../../data/academics';
 import { Sparkles, ArrowRight, CheckCircle2, GraduationCap, Compass, BookOpen } from 'lucide-react';
 
-export const LearningJourney: React.FC = () => {
+interface LearningJourneyProps {
+  onOpenDivision?: (slug: string) => void;
+}
+
+export const LearningJourney: React.FC<LearningJourneyProps> = ({ onOpenDivision }) => {
   return (
     <section id="learning-journey" className="space-y-12 pt-16 scroll-mt-28 border-t border-slate-200">
       
@@ -68,13 +72,13 @@ export const LearningJourney: React.FC = () => {
                 </div>
 
                 <div className="pt-2">
-                  <Link
-                    to={`/academics#${div.slug}`}
+                  <button
+                    onClick={() => onOpenDivision && onOpenDivision(div.slug)}
                     className="inline-flex items-center gap-2 px-5 py-2.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold uppercase tracking-wider rounded-xl transition-all"
                   >
                     <span>Explore {div.name}</span>
                     <ArrowRight className="w-3.5 h-3.5 text-amber-400" />
-                  </Link>
+                  </button>
                 </div>
               </div>
             </div>

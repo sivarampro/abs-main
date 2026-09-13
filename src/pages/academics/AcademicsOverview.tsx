@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { PageHeader } from '../../components/layout/PageHeader';
 import { academicDivisions } from '../../data/academics';
 import { Sparkles, GraduationCap, BookOpen, ArrowRight, CheckCircle2, Award, Clock, Layers } from 'lucide-react';
@@ -10,9 +10,25 @@ import { TeachingLearning } from './TeachingLearning';
 import { AcademicTechInnovation } from './AcademicTechInnovation';
 import { AcademicSupport } from './AcademicSupport';
 import { AssessmentProgress } from './AssessmentProgress';
-import { EarlyYears, Primary, MiddleSchool, Secondary, SeniorSecondary } from './DivisionDetailPage';
+import { DivisionModal } from '../../components/widgets/DivisionModal';
+
+const divisionSlugs = ['early-years', 'primary', 'middle-school', 'secondary', 'senior-secondary'];
 
 export const AcademicsOverview: React.FC = () => {
+  const [activeDivision, setActiveDivision] = useState<string | null>(null);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  // Listen to hash changes to open the modal from navbar links
+  useEffect(() => {
+    const hash = location.hash.replace('#', '');
+    if (divisionSlugs.includes(hash)) {
+      setActiveDivision(hash);
+      // Remove hash from URL to prevent scrolling jump and allow reopening
+      navigate('/academics', { replace: true });
+    }
+  }, [location.hash, navigate]);
+
   return (
     <div className="space-y-20 sm:space-y-28 pb-24">
       
@@ -104,19 +120,19 @@ export const AcademicsOverview: React.FC = () => {
 
 
       {/* Render Subsections */}
-      <LearningJourney />
+      <LearningJourney onOpenDivision={setActiveDivision} />
       <Curriculum />
       <TeachingLearning />
       <AcademicTechInnovation />
       <AcademicSupport />
       <AssessmentProgress />
 
-      {/* Render Divisions */}
-      <EarlyYears />
-      <Primary />
-      <MiddleSchool />
-      <Secondary />
-      <SeniorSecondary />
+      {/* Division Modal */}
+      <DivisionModal 
+        isOpen={!!activeDivision} 
+        divisionSlug={activeDivision} 
+        onClose={() => setActiveDivision(null)} 
+      />
 
     </div>
   );
