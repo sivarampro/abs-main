@@ -154,24 +154,27 @@ export const Home: React.FC = () => {
           01. HERO SECTION: EDUCATE. ENLIGHTEN. EXCEL.
           ======================================================== */}
       <div className="relative flex flex-col">
-        <section className="relative w-full aspect-[4/3] sm:aspect-video lg:h-[650px] overflow-hidden bg-slate-100" aria-label="Hero Image Slideshow">
+        <section className="relative w-full overflow-hidden bg-slate-100" aria-label="Hero Image Slideshow">
           {/* Subtle grid background */}
           <div className="absolute inset-0 bg-subtle-mesh opacity-80 pointer-events-none" />
           <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-amber-400/10 rounded-full blur-3xl pointer-events-none z-10" />
           
           {/* Background Slideshow */}
-          <div className="absolute inset-0 overflow-hidden pointer-events-none z-0" aria-hidden="true">
+          <div className="relative w-full pointer-events-none z-0" aria-hidden="true">
+            {/* Invisible placeholder to define the height of the section based on the image aspect ratio */}
+            <img src={backgroundImages[0]} alt="" className="w-full h-auto invisible" />
+
             {backgroundImages.map((img, idx) => (
               <div
                 key={img}
-                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
+                className={`absolute inset-0 transition-opacity duration-1000 ease-in-out flex items-center justify-center ${
                   idx === currentBgIndex ? "opacity-100" : "opacity-0"
                 }`}
               >
                 <img 
                   src={img} 
                   alt="" 
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-contain"
                 />
               </div>
             ))}
