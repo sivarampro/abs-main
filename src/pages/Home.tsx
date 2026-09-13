@@ -153,11 +153,11 @@ export const Home: React.FC = () => {
       {/* ========================================================
           01. HERO SECTION: EDUCATE. ENLIGHTEN. EXCEL.
           ======================================================== */}
-      <div className="relative">
-        <section className="relative flex items-center justify-center bg-gradient-to-b from-amber-50/50 via-white to-slate-50 pt-10 pb-10 sm:pb-12 overflow-hidden" aria-label="Hero">
+      <div className="relative flex flex-col">
+        <section className="relative w-full aspect-[4/3] sm:aspect-video lg:h-[650px] overflow-hidden bg-slate-100" aria-label="Hero Image Slideshow">
           {/* Subtle grid background */}
           <div className="absolute inset-0 bg-subtle-mesh opacity-80 pointer-events-none" />
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-amber-400/10 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-amber-400/10 rounded-full blur-3xl pointer-events-none z-10" />
           
           {/* Background Slideshow */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none z-0" aria-hidden="true">
@@ -165,7 +165,7 @@ export const Home: React.FC = () => {
               <div
                 key={img}
                 className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-                  idx === currentBgIndex ? 'opacity-100' : 'opacity-0'
+                  idx === currentBgIndex ? "opacity-100" : "opacity-0"
                 }`}
               >
                 <img 
@@ -175,14 +175,29 @@ export const Home: React.FC = () => {
                 />
               </div>
             ))}
-            {/* Subtle gradient at bottom for stats readability */}
-            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-slate-900/40 to-transparent" />
           </div>
 
-          <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 flex flex-col justify-end min-h-[500px] sm:min-h-[600px] lg:min-h-[700px] pb-8">
+          {/* Animated Peeking Students in Hero */}
+          <div className="absolute left-0 bottom-0 w-full h-0 pointer-events-none z-10">
+            <img 
+              src={studentJumpingBoy} 
+              alt="" 
+              className="absolute z-10 w-24 sm:w-32 h-auto animate-peek-boy opacity-90" 
+              style={{ transformOrigin: "bottom center", bottom: "-10px" }}
+            />
+            <img 
+              src={studentJumping} 
+              alt="" 
+              className="absolute z-10 w-24 sm:w-32 h-auto animate-peek-girl opacity-90" 
+              style={{ transformOrigin: "bottom center", bottom: "-10px" }}
+            />
+          </div>
+        </section>
 
+        <section className="relative py-8 sm:py-10 bg-slate-50 border-b border-slate-200 z-20">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10 sm:mb-12">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8 sm:mb-10">
               <a
                 href="#five-schools"
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-amber-400 hover:bg-amber-300 text-slate-950 font-bold text-sm uppercase tracking-wider transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
@@ -192,51 +207,34 @@ export const Home: React.FC = () => {
               </a>
               <Link
                 to="/admissions"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm uppercase tracking-wider transition-all shadow-md hover:shadow-lg"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm uppercase tracking-wider transition-all shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
               >
                 <span>Admission Online 2026-27</span>
               </Link>
-
             </div>
 
             {/* Group Key Stats Bar */}
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-5xl mx-auto">
-              <div className="bg-white/80 backdrop-blur-xs p-4 sm:p-5 rounded-2xl border border-amber-200/80 shadow-xs text-center flex flex-col items-center justify-center">
+              <div className="bg-white/95 p-4 sm:p-5 rounded-2xl border border-amber-200/80 shadow-sm text-center flex flex-col items-center justify-center hover:-translate-y-1 transition-transform">
                 <span className="font-serif text-2xl sm:text-3xl font-bold text-amber-600 block">17+</span>
                 <span className="text-[11px] font-bold text-slate-800 uppercase tracking-wider block mt-1">Years Excellence</span>
               </div>
-              <div className="bg-white/80 backdrop-blur-xs p-4 sm:p-5 rounded-2xl border border-amber-200/80 shadow-xs text-center flex flex-col items-center justify-center">
+              <div className="bg-white/95 p-4 sm:p-5 rounded-2xl border border-amber-200/80 shadow-sm text-center flex flex-col items-center justify-center hover:-translate-y-1 transition-transform">
                 <span className="font-serif text-2xl sm:text-3xl font-bold text-amber-600 block">5</span>
                 <span className="text-[11px] font-bold text-slate-800 uppercase tracking-wider block mt-1">Campuses</span>
               </div>
-              <div className="bg-white/80 backdrop-blur-xs p-4 sm:p-5 rounded-2xl border border-amber-200/80 shadow-xs text-center flex flex-col items-center justify-center">
+              <div className="bg-white/95 p-4 sm:p-5 rounded-2xl border border-amber-200/80 shadow-sm text-center flex flex-col items-center justify-center hover:-translate-y-1 transition-transform">
                 <span className="font-serif text-2xl sm:text-3xl font-bold text-amber-600 block">5,000+</span>
                 <span className="text-[11px] font-bold text-slate-800 uppercase tracking-wider block mt-1">Students</span>
               </div>
-              <div className="bg-white/80 backdrop-blur-xs p-4 sm:p-5 rounded-2xl border border-amber-200/80 shadow-xs text-center flex flex-col items-center justify-center">
+              <div className="bg-white/95 p-4 sm:p-5 rounded-2xl border border-amber-200/80 shadow-sm text-center flex flex-col items-center justify-center hover:-translate-y-1 transition-transform">
                 <span className="font-serif text-2xl sm:text-3xl font-bold text-amber-600 block">450+</span>
                 <span className="text-[11px] font-bold text-slate-800 uppercase tracking-wider block mt-1">Educators</span>
               </div>
-              <div className="col-span-2 md:col-span-1 bg-white/80 backdrop-blur-xs p-4 sm:p-5 rounded-2xl border border-amber-200/80 shadow-xs text-center flex flex-col items-center justify-center">
+              <div className="col-span-2 md:col-span-1 bg-white/95 p-4 sm:p-5 rounded-2xl border border-amber-200/80 shadow-sm text-center flex flex-col items-center justify-center hover:-translate-y-1 transition-transform">
                 <span className="font-serif text-2xl sm:text-3xl font-bold text-amber-600 block">100%</span>
                 <span className="text-[11px] font-bold text-slate-800 uppercase tracking-wider block mt-1">CCTV & Safety</span>
               </div>
-            </div>
-
-            {/* Animated Peeking Students in Hero */}
-            <div className="absolute left-0 bottom-0 w-full h-0 pointer-events-none z-10">
-              <img 
-                src={studentJumpingBoy} 
-                alt="" 
-                className="absolute z-10 w-24 sm:w-32 h-auto animate-peek-boy opacity-90" 
-                style={{ transformOrigin: 'bottom center', bottom: '-10px' }}
-              />
-              <img 
-                src={studentJumping} 
-                alt="" 
-                className="absolute z-10 w-24 sm:w-32 h-auto animate-peek-girl opacity-90" 
-                style={{ transformOrigin: 'bottom center', bottom: '-10px' }}
-              />
             </div>
           </div>
         </section>
